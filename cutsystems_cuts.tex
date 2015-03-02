@@ -1,0 +1,97 @@
+
+%There is a bicategory $\cat{V}$ of smooth projective algebraic varieties over $\mathbb{C}$ \cite{??}, where the $1$-morphisms between varieties $\md{x}: A \lto B$ are Fourier-Mukai kernels, that is, complexes of coherent sheaves $\md{X}$ on the product $A \times B$. 
+
+%For example, let $B = Proj(A)$ for some graded algebra $A = k[x_1,\ldots,x_n]/I$, and let $\md{X}, \md{Y}$ be complexes of vector bundles on $B$. In the bicategory $\cat{V}$ there are $1$-morphisms
+%\[
+%\xymatrix@C+2pc{
+%\operatorname{pt} \ar[r]^-{\md{X}} & B \ar[r]^-{\md{Y}^{\vee}} & \operatorname{pt}
+%}
+%]
+%where $\operatorname{pt} = \Spec(\mathbb{C})$. The composite in $\cat{V}$ is the complex
+%\begin{equation}\label{eq:infinite_tensor_scheme}
+%y^{\vee} \otimes^{\mathbb{L}} x = \md{Y}^{\vee} \otimes^{\mathbb{L}} \md{X} \cong 
+%\end{equation}
+%which is infinite-dimensional but has finite-dimensional cohomology. 
+
+%Suppose that $\md{X}, \md{Y}$ are finitely described, for example that $X, Y$ are complexes of finitely generated graded free $A$-modules and $\md{X}, \md{Y}$ the associated complexes of sheaves, which are therefore described in terms of finite lists of matrices of homogeneous polynomials. 
+
+\subsection{Splitting homotopies from connections}
+
+We now develop the splitting homotopy of Example \ref{example:koszulsplit} in its most general form, in terms of Koszul complexes and connections. The splittings homotopies in this paper will all be derived as perturbations of these ``connection type'' examples. The material in the next two sections is from \cite{??}, we quote it here for the reader's convenience.
+
+Let $k$ be a $\mathbb{Q}$-algebra and $R$ a $k$-algebra, $t_1,\ldots, t_n$ a quasi-regular sequence in $R$ such that $\bar{R} = R/(t_1,\ldots,t_n)$ is a finitely generated free $k$-module and $R$ admits a flat $k$-linear connection which is standard in the sense of \cite{??}
+\[
+\nabla: R \lto R \otimes_{k[t]} \Omega^1_{k[t]/k}
+\]
+and has the property that $\Ker(\nabla) + (t_1,\ldots,t_n) R = R$. With $\theta_i$ a formal variable of degree $-1$ the Koszul complex $K = K(t_1,\ldots,t_n)$ (see Definition \ref{defn:koszul}) has as its underlying graded module the exterior algebra on the $\theta_i$.
+
+The connection $\nabla$ extends canonically to an operator on $R \otimes_{k[t]} \Omega^*_{k[t]/k}$ where $\Omega^* = \bigwedge \Omega^1$ is the exterior algebra. By identifying $d t_i$ with the generator $\theta_i$ of $K$ we may identify this tensor product with $K$ itself, so that $\nabla$ becomes a degree $-1$ $k$-linear operator on $K$. It is straightforward to check that the operator $[d_K, \nabla]$ is invertible on the graded submodule $K_{\le -1}$ of nonzero degree terms, and we define
+\[
+H = [d_K, \nabla]^{-1} \nabla\,.
+\]
+
+\begin{proposition} $H$ is a $k$-linear splitting homotopy on the complex $K$.
+\end{proposition}
+\begin{proof}
+See \cite[Section 8.1]{papertoby}.
+\end{proof}
+
+The associated strong deformation retract of $\mathbb{Z}$-graded $k$-complexes is
+\begin{equation}\label{eq:originalHdef}
+\xymatrix@C+2pc{
+(\bar{R},0) \ar@<-1ex>[r]_{\sigma} & (\Lambda, d_K), \ar@<-1ex>[l]_{\pi}
+} \quad H
+\end{equation}
+where $\pi: K \lto \bar{R}$ is the canonical $R$-linear quasi-isomorphism which vanishes on $K_{\le -1}$ and is in degree zero the quotient map $R \lto \bar{R}$, and $\sigma$ is a $k$-linear embedding of $\bar{R}$ into $R$ uniquely determined by the choice of connection. 
+
+\begin{remark} There is some flexibility to beginning with a connection rather than assuming that $R$ is a free $k[t]$-module, but this complication is not essential: the above is a very slight generalization of the simplest example, where $R = k[t]$ itself, $\nabla$ is the K\"ahler differential, and for a homogeneous polynomial $f \in k[t]$ and homogeneous tensor $\omega$
+\[
+[d_K, \nabla]^{-1}(f \omega) = \frac{1}{|f| + |\omega|} f \omega 
+\]
+and hence
+\[
+H( f \omega ) =  \frac{1}{|f| + |\omega|} \sum_i \partial_{t_i} (f) \theta_i \wedge \omega\,.
+\]
+In this case $\sigma$ is just the embedding of $k$ as the constant polynomials in $k[t]$.
+\end{remark}
+
+\subsection{Splitting homotopies on matrix factorisations}
+
+With the notation of the previous section let $(X,d_X)$ be a finite rank matrix factorisation over $R$ of some $W \in k$. That is, $X$ is a finite rank free $R$-module and $d_X$ is $R$-linear, and the potential $W$ is in the image of the structure map $k \lto R$. The aim is to present $X \otimes K$ as being $k$-homotopy equivalent to a finite rank matrix factorisation over $k$, using a splitting homotopy on $X \otimes K = (X \otimes \Lambda, d_X + d_K)$ obtained via the perturbation lemma from a splitting homotopy on $(X \otimes \Lambda, d_K)$, viewing $d_X$ as a perturbation on the latter.
+
+Choosing a homogeneous $R$-basis allows us to write $X \cong V \otimes_k R$ for some $\mathbb{Z}_2$-graded free $k$-module $V$, in which case
+\begin{equation}\label{eq:lambdaiso2}
+X \otimes \Lambda \cong (V \otimes_k R) \otimes_R \Lambda \cong V \otimes_k \Lambda
+\end{equation}
+In this way, using the basis, the $k$-linear splitting homotopy $H$ on $K = (\Lambda, d_K)$ gives rise to a $k$-linear operator $1 \otimes H$ on $X \otimes \Lambda$, which we again denote by $H$.
+
+\begin{lemma} $H$ is a $k$-linear splitting homotopy on the complex $(X \otimes \Lambda, d_K)$.
+\end{lemma}
+
+The associated strong deformation retract is
+\[
+\xymatrix@C+2pc{
+(\bar{X},0) \ar@<-1ex>[r]_-{\sigma} & (X \otimes \Lambda, d_K), \ar@<-1ex>[l]_-{\pi}
+} \quad H
+\]
+where $\bar{X} = X / (t_1,\ldots,t_n)X = X \otimes_R \bar{R}$, $\pi$ is $R$-linear induced by the map $\pi: K \lto \bar{R}$, and $\sigma = 1 \otimes \sigma$ is defined using map $\sigma$ of \eqref{eq:originalHdef} and the isomorphism \eqref{eq:lambdaiso2}.
+
+We now view $\tau = d_X$ as a perturbation of $(X \otimes \Lambda, d_K)$. Naturally $(d_K + \tau)^2 = W$, so that the potential is changed by this perturbation. The transference problem asks how to define a splitting homotopy $\phi_\infty$ on the matrix factorisation $X \otimes K = (X \otimes \Lambda, d_K + d_X)$ in such a way that the underlying graded module is $\bar{X}$. Since $H d_X$ has finite order, it follows from the perturbation lemma (Theorem \ref{theorem:pertlemma}) that
+\[
+\phi_\infty = \sum_{m \ge 0} (-1)^m (H d_X)^m H
+\]
+is a $k$-linear splitting homotopy achieving the desired aim.
+
+The next result is \cite[Proposition 7.1]{??}.
+
+\begin{corollary} $\phi_\infty$ is a $k$-linear splitting homotopy on $X \otimes K$ and the associated $k$-linear strong deformation retract of linear factorisations of $W$ is of the form
+\begin{equation}
+\xymatrix@C+2pc{
+(\bar{X},d_X) \ar@<-1ex>[r]_-{\sigma_\infty} & (X \otimes \Lambda, d_X + d_K), \ar@<-1ex>[l]_-{\pi}
+} \quad \phi_\infty
+\end{equation}
+where $A = d_X( 1 + H d_X )^{-1}$ and $\sigma_\infty = \sigma - H A \sigma$.
+\end{corollary} 
+\begin{proof}
+We need only justify why in \eqref{eq:perturbedsdr} we have $d_\infty = d_X$ and $f_\infty = \pi$. But this follows from $H \sigma = 0$ and $\pi H = 0$.
+\end{proof}
