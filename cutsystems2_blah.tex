@@ -1,0 +1,134 @@
+\documentclass[english,letter paper,12pt,leqno]{article}
+\usepackage{stmaryrd}
+\usepackage{amsmath, amscd, amssymb, mathrsfs, accents, amsfonts,amsthm}
+\usepackage[all]{xy}
+\usepackage{tikz}
+
+\SelectTips{cm}{}
+
+\setlength{\evensidemargin}{0.1in}
+\setlength{\oddsidemargin}{0.1in}
+\setlength{\textwidth}{6.3in}
+\setlength{\topmargin}{0.0in}
+\setlength{\textheight}{8.5in}
+\setlength{\headheight}{0in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheoremstyle{example}{\topsep}{\topsep}
+	{}
+	{}
+	{\bfseries}
+	{.}
+	{2pt}
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}
+	
+	\theoremstyle{example}
+	\newtheorem{definition}[equation]{Definition}
+	\newtheorem{example}[equation]{Example}
+	\newtheorem{remark}[equation]{Remark}
+
+\numberwithin{equation}{section}
+
+% Operators
+\def\eval{\operatorname{ev}}
+\def\res{\operatorname{Res}}
+\def\Coker{\operatorname{Coker}}
+\def\Ker{\operatorname{Ker}}
+\def\im{\operatorname{im}}
+\def\can{\operatorname{can}}
+\def\K{\mathbf{K}}
+\def\D{\mathbf{D}}
+\def\N{\mathbf{N}}
+\def\LG{\mathcal{LG}}
+\def\Ab{\operatorname{Ab}}
+\def\Hom{\operatorname{Hom}}
+\def\modd{\operatorname{mod}}
+\def\Modd{\operatorname{Mod}}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tot}{Tot}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\str}{str}
+\DeclareMathOperator{\hmf}{hmf}
+\DeclareMathOperator{\HMF}{HMF}
+\DeclareMathOperator{\hf}{HF}
+\DeclareMathOperator{\At}{At}
+\DeclareMathOperator{\Cat}{Cat}
+
+\begin{document}
+
+% Commands
+\def\Res{\res\!}
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\xlto}[1]{\stackrel{#1}\lto}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\md}[1]{\mathscr{#1}}
+\def\l{\,|\,}
+\def\sgn{\textup{sgn}}
+
+\title{Cut systems and bicategories II}
+\author{Daniel Murfet}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{itemize}
+\item The interpretation of MALL (multiplicative additive linear logic)
+\item Higher computation
+\item Implementation in Singular
+\end{itemize}
+
+TODO: finite fields, exponentials, link between additives and probabilistic semantics
+
+\section{The interpretation of linear logic}
+
+In the sequel:
+
+\begin{itemize}
+\item What is linear logic
+\item Geometry of interaction
+\item Interpretations of linear logic in monoidal categories
+\item $\LG$ is a monoidal bicategory
+\item What is a monoidal cut system?
+\item The interpretation
+\item Do some kind of argument on equality of boolean circuits using algebra? i.e. normalize a boolean circuit with two stages. Of course everything is boring if we just use identity defects, so also use the crossing.
+\end{itemize}
+
+\section{Higher computation}
+
+Observables, proof-of-work, structured input data (modules over monads) and induced output structure via $2$-morphisms, proof-of-idempotence, proof-of-commutativity, cones and crossings, observational equivalence via Chern characters.
+
+\section{The implementation in Singular}
+
+Introduction: computation is integration. Argue that the true mathematical semantics of symbols are cohomology classes (example of basis for the cohomology of torus). Computation has two stages: in the first stage one produces new cohomology classes from old ones via convolution (e.g. concatenating $\lambda$-terms) and in the second stage one finds out how to write the new cycles as linear combinations of the normal forms (e.g. normalisation). In terms of Hodge theory finding harmonic representatives consists of projecting onto certain subspaces, i.e. \emph{integrals} against the chosen basis. We deal with a categorified notion of cocycle, the second stage is now represented by finding finite rank representatives in symbolic form (in the case of loops at $0$ splitting idempotents is analogous to picking out the subspace of harmonic forms in a larger space of cocycles).
+
+\begin{itemize}
+\item History of computer science as in Sergeraert.
+\item Computation with cocycles on the torus $T$ and kernels on $T \times T$.
+\item We want to then refer to effective homology, but this requires a transition... take the point of view that Hodge theory is really a deformation retract?
+\end{itemize}
+
+\bibliographystyle{amsalpha}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BHLS03}
+
+\bibitem{barneslambe}
+D.~W.~Barnes and L.~A.~Lambe, \emph{A fixed point approach to homological perturbation theory}, Proc. Amer.
+  Math. Soc. \textbf{112} Number 3 (1991), 881--892.
+  
+\bibitem[Cra04]{crainic}
+M.~Crainic, \emph{On the perturbation lemma, and deformations}, arXiv:0403266
+  [math.AT].
+
+\end{thebibliography}
+
+\end{document}
