@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.21)  29 AUG 2015 21:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.21)  14 OCT 2015 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -711,38 +711,38 @@ LaTeX Warning: Label `defn:koszul' multiply defined.
 )
 \openout1 = `cutsystems-new.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for U+stmry on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 82.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for U+msa on input line 86.
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 86.
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 86.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 82.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.47998pt on input line 86.
+Package xypdf Info: Line width: 0.47998pt on input line 82.
 
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -774,7 +774,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring ON on input line 86.
+Package hyperref Info: Link coloring ON on input line 82.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -784,9 +784,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count149
 )
-LaTeX Info: Redefining \ref on input line 86.
-LaTeX Info: Redefining \pageref on input line 86.
-LaTeX Info: Redefining \nameref on input line 86.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
 
 (./cutsystems-new.out) (./cutsystems-new.out)
 \@outlinefile=\write5
@@ -796,53 +796,59 @@ LaTeX Info: Redefining \nameref on input line 86.
 \tf@toc=\write6
 \openout6 = `cutsystems-new.toc'.
 
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 113.
+ [1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 109.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
+) [2]
 
-LaTeX Warning: Citation `??' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `section:cut_systems' on page 3 undefined on input lin
+e 147.
 
-
-LaTeX Warning: Citation `??' on page 1 undefined on input line 113.
-
-[1
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `??' on page 2 undefined on input line 117.
-
-
-LaTeX Warning: Citation `??' on page 2 undefined on input line 117.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 120.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 153.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 153.
+ [3]
+Package epstopdf Info: Source file: <pic02.eps>
+(epstopdf)                    date: 2015-10-12 19:26:39
+(epstopdf)                    size: 36817 bytes
+(epstopdf)             Output file: <pic02-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-10-12 19:27:25
+(epstopdf)                    size: 15125 bytes
+(epstopdf)             Command: <repstopdf --outfile=pic02-eps-converted-to.pdf
+ pic02.eps>
+(epstopdf)             \includegraphics on input line 174.
+Package epstopdf Info: Output file is already uptodate.
 
+<pic02-eps-converted-to.pdf, id=161, 559.08875pt x 225.84375pt>
+File: pic02-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `section:cut_systems' on page 2 undefined on input lin
-e 142.
+<use pic02-eps-converted-to.pdf>
+Package pdftex.def Info: pic02-eps-converted-to.pdf used on input line 174.
+(pdftex.def)             Requested size: 559.08737pt x 225.84319pt.
+ [4 <./pic02-eps-converted-to.pdf>] <xymatrix
+3x1 102> [5] <xymatrix 2x2 194> [6] [7] <xymatrix 4x2 298> [8] <xymatrix 2x3
+226> <xymatrix 3x2 270>
 
+LaTeX Warning: Citation `greuel' on page 9 undefined on input line 369.
 
-LaTeX Warning: Citation `girard_towards' on page 2 undefined on input line 146.
-
-
-[2] <xymatrix 2x2 194> [3] <xymatrix 4x2 298> [4] <xymatrix 2x3 226> [5]
-<xymatrix 3x2 270> [6] [7]
-Overfull \hbox (3.70529pt too wide) in paragraph at lines 326--327
+[9] [10]
+Overfull \hbox (3.70529pt too wide) in paragraph at lines 430--431
 []\OT1/cmr/m/n/12 It fol-lows that any el-e-ment in the Ja-cobi ideal $(\OML/cm
 m/m/it/12 @[]W; [] ; @[]W\OT1/cmr/m/n/12 )$ acts null-homotopically
  []
 
-[8] [9] <xymatrix 3x1 89> [10] <xymatrix 3x1 92> <xymatrix 3x1 102> <xymatrix
-4x2 202> [11] [12] <xymatrix 2x1 100> <xymatrix 2x1 100>
-Overfull \hbox (2.56465pt too wide) in paragraph at lines 562--563
+[11] [12] <xymatrix 3x1 89> [13] <xymatrix 3x1 92> <xymatrix 3x1 102>
+<xymatrix 4x2 202> [14] [15] <xymatrix 2x1 100> <xymatrix 2x1 100>
+Overfull \hbox (2.56465pt too wide) in paragraph at lines 666--667
 []\OT1/cmr/m/n/12 The su-per-cat-e-gory struc-ture is given by the func-tor $	 
 : \OMS/cmsy/m/n/12 T[] [][]! T[]$ \OT1/cmr/m/n/12 where $	(\OML/cmm/m/it/12 X; 
 n\OT1/cmr/m/n/12 ) =
@@ -850,127 +856,110 @@ n\OT1/cmr/m/n/12 ) =
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 597.
+(hyperref)                removing `math shift' on input line 701.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 597.
+(hyperref)                removing `math shift' on input line 701.
 
-
-LaTeX Warning: Reference `??' on page 13 undefined on input line 601.
-
-[13]
-
-LaTeX Warning: Reference `theorem:l_cut_system' on page 14 undefined on input l
-ine 640.
-
-[14] [15]
-
-LaTeX Warning: Reference `??' on page 16 undefined on input line 705.
-
-[16] [17] <xymatrix 4x1 150> [18]
-
-LaTeX Warning: Reference `eq:intro_clifford_act2' on page 19 undefined on input
- line 831.
-
-[19]
+[16] [17] [18] [19] [20] [21] <xymatrix 4x1 150> [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `math shift' on input line 967.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `math shift' on input line 967.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `math shift' on input line 967.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `math shift' on input line 967.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 857.
-[20] <xymatrix 2x1 94> [21] <xymatrix 2x2 327>
-Underfull \hbox (badness 10000) in paragraph at lines 923--925
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 975.
+[23] [24] <xymatrix 2x1 94> <xymatrix 2x2 327>
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1043
 
  []
 
-<xymatrix 2x1 94> [22] <xymatrix 2x2 268> [23] <xymatrix 2x1 94> [24]
-<xymatrix 2x1 100> [25] [26] [27]
+[25] <xymatrix 2x1 94> <xymatrix 2x2 268> [26] <xymatrix 2x1 94> [27] [28]
+<xymatrix 2x1 100> [29] [30]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 1167.
+d on input line 1285.
 
-[28] [29] [30]
-
-LaTeX Warning: Reference `section:variation_of_homotopy' on page 31 undefined o
-n input line 1307.
-
-[31] <xymatrix 2x1 94>
-Overfull \hbox (0.38365pt too wide) in paragraph at lines 1369--1371
+[31] [32] [33] [34] <xymatrix 2x1 94> [35]
+Overfull \hbox (0.38365pt too wide) in paragraph at lines 1487--1489
 \OT1/cmr/m/n/12 where $\OML/cmm/m/it/12 J[]$ \OT1/cmr/m/n/12 is the Ja-cobi al-
 ge-bra from [], $\OML/cmm/m/it/12 ^^Y \OT1/cmr/m/n/12 : []\OML/cmm/m/it/12 K []
 []\OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 J[]$ \OT1/cmr/m/n/12 is the canon-i-cal q
 uasi-isomorphism
  []
 
-[32] <xymatrix 2x1 100> <xymatrix 2x1 100> <xymatrix 2x1 100> <xymatrix 3x1
-194> [33] <xymatrix 2x1 100> [34]
-LaTeX Font Info:    Try loading font information for U+euf on input line 1498.
+<xymatrix 2x1 100> <xymatrix 2x1 100> <xymatrix 2x1 100> [36] <xymatrix 3x1
+194> <xymatrix 2x1 100> [37] [38]
+LaTeX Font Info:    Try loading font information for U+euf on input line 1616.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) <xymatrix 2x2
-194> [35] <xymatrix 3x1 102>
+194> <xymatrix 3x1 102> [39]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1544.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1544.
+(hyperref)                removing `math shift' on input line 1662.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1544.
+(hyperref)                removing `math shift' on input line 1662.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1544.
+(hyperref)                removing `math shift' on input line 1662.
 
-[36] <xymatrix 3x2 154>
 
-LaTeX Warning: Citation `??' on page 37 undefined on input line 1560.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1662.
 
-<xymatrix 2x1 100> <xymatrix 2x1 100> [37] <xymatrix 2x1 100> <xymatrix 3x1
-102> [38] [39] [40] [41] <xymatrix 3x1 102> [42] <xymatrix 3x1 102> <xymatrix
-3x1 102>
-Overfull \hbox (0.30928pt too wide) in paragraph at lines 1866--1866
+<xymatrix 3x2 154>
+
+LaTeX Warning: Citation `??' on page 40 undefined on input line 1678.
+
+<xymatrix 2x1 100> [40] <xymatrix 2x1 100> <xymatrix 2x1 100> [41] <xymatrix
+3x1 102> [42] [43] [44] <xymatrix 3x1 102> [45] <xymatrix 3x1 102> [46]
+<xymatrix 3x1 102>
+Overfull \hbox (0.30928pt too wide) in paragraph at lines 1988--1988
 [] 
  []
 
-[43]
 
-LaTeX Warning: Reference `eq:psicomp1' on page 44 undefined on input line 1876.
-
+LaTeX Warning: Reference `eq:psicomp1' on page 47 undefined on input line 1998.
 
 
-LaTeX Warning: Reference `eq:psicomp3' on page 44 undefined on input line 1876.
+
+LaTeX Warning: Reference `eq:psicomp3' on page 47 undefined on input line 1998.
 
 
-<xymatrix 3x2 154> <xymatrix 3x2 154> <xymatrix 3x2 154> <xymatrix 3x2 154>
-<xymatrix 3x3 258> <xymatrix 3x3 302> <xymatrix 3x3 258> <xymatrix 3x3 258>
-<xymatrix 3x3 302> <xymatrix 3x3 258> [44] [45] [46] [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2017.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2017.
+[47] <xymatrix 3x2 154> <xymatrix 3x2 154> <xymatrix 3x2 154> <xymatrix 3x2
+154> <xymatrix 3x3 258> <xymatrix 3x3 302> <xymatrix 3x3 258> <xymatrix 3x3
+258> <xymatrix 3x3 302> <xymatrix 3x3 258> [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 2124--2125
+[][]\OT1/cmr/m/n/12 , \OT1/cmr/m/sl/12 Su-per-cat-e-gori-fi-ca-tion of quan-tum
+ Kac-Moody al-ge-bras II\OT1/cmr/m/n/12 ,
+ []
+
+[50] [51]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2161.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2161.
  (./cutsystems-new.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2017.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2017.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2161.
 
 Package rerunfilecheck Info: File `cutsystems-new.out' has not changed.
-(rerunfilecheck)             Checksum: 8C32AFDCDEB6FF8B006F4721BD29FE52;1107.
+(rerunfilecheck)             Checksum: 0FFAD27082898F686189D6C96F495111;1331.
 
 
 LaTeX Warning: There were undefined references.
@@ -978,13 +967,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2017.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2161.
  ) 
 Here is how much of TeX's memory you used:
- 19302 strings out of 493089
- 339915 string characters out of 6134842
- 454967 words of memory out of 5000000
- 22114 multiletter control sequences out of 15000+600000
+ 19345 strings out of 493089
+ 340503 string characters out of 6134842
+ 452789 words of memory out of 5000000
+ 22132 multiletter control sequences out of 15000+600000
  26576 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,54p,3244b,792s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -995,33 +984,34 @@ usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/stmaryrd/stmary8.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/xypic/xycmat12.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/public/xypic/xycmbt12.pfb>
-Output written on cutsystems-new.pdf (47 pages, 459895 bytes).
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/doublestroke/dsrom8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/stmaryrd/stmary8.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/xypic/xycmat12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/xypic/xycmbt12.pfb>
+Output written on cutsystems-new.pdf (51 pages, 505984 bytes).
 PDF statistics:
- 854 PDF objects out of 1000 (max. 8388607)
- 767 compressed objects within 8 object streams
- 273 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 951 PDF objects out of 1000 (max. 8388607)
+ 854 compressed objects within 9 object streams
+ 296 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,327 @@
+\documentclass[english,letter paper,12pt,leqno]{article}
+\usepackage{stmaryrd}
+\usepackage{amsmath, amscd, amssymb, mathrsfs, accents, amsfonts,amsthm}
+\usepackage[all]{xy}
+\usepackage{dsfont}
+\usepackage{tikz}
+\def\nicedashedcolourscheme{\shadedraw[top color=blue!22, bottom color=blue!22, draw=gray, dashed]}
+\def\nicecolourscheme{\shadedraw[top color=blue!22, bottom color=blue!22, draw=white]}
+\def\nicepalecolourscheme{\shadedraw[top color=blue!12, bottom color=blue!12, draw=white]}
+\def\nicenocolourscheme{\shadedraw[top color=gray!2, bottom color=gray!25, draw=white]}
+\def\nicereallynocolourscheme{\shadedraw[top color=white!2, bottom color=white!25, draw=white]}
+\definecolor{Myblue}{rgb}{0,0,0.6}
+\usepackage[a4paper,colorlinks,citecolor=Myblue,linkcolor=Myblue,urlcolor=Myblue,pdfpagemode=None]{hyperref}
+
+\SelectTips{cm}{}
+
+\setlength{\evensidemargin}{0.1in}
+\setlength{\oddsidemargin}{0.1in}
+\setlength{\textwidth}{6.3in}
+\setlength{\topmargin}{0.0in}
+\setlength{\textheight}{8.5in}
+\setlength{\headheight}{0in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{setup}[theorem]{Setup}
+
+\newtheoremstyle{example}{\topsep}{\topsep}
+	{}
+	{}
+	{\bfseries}
+	{.}
+	{2pt}
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}
+	
+	\theoremstyle{example}
+	\newtheorem{definition}[theorem]{Definition}
+	\newtheorem{example}[theorem]{Example}
+	\newtheorem{remark}[theorem]{Remark}
+	\newtheorem{strat}[theorem]{Strategy}
+
+\numberwithin{equation}{section}
+
+% Operators
+\def\eval{\operatorname{ev}}
+\def\res{\operatorname{Res}}
+\def\Coker{\operatorname{Coker}}
+\def\Ker{\operatorname{Ker}}
+\def\im{\operatorname{Im}}
+\def\can{\operatorname{can}}
+\def\K{\mathbf{K}}
+\def\D{\mathbf{D}}
+\def\N{\mathbf{N}}
+\def\LG{\mathcal{LG}}
+\def\Ab{\operatorname{Ab}}
+\def\Hom{\operatorname{Hom}}
+\def\modd{\operatorname{mod}}
+\def\Modd{\operatorname{Mod}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\nN{\mathds{N}}
+\def\nZ{\mathds{Z}}
+\def\nQ{\mathds{Q}}
+\def\nR{\mathds{R}}
+\def\nC{\mathds{C}}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tot}{Tot}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\str}{str}
+\DeclareMathOperator{\hmf}{hmf}
+\DeclareMathOperator{\HMF}{HMF}
+\DeclareMathOperator{\hf}{HF}
+\DeclareMathOperator{\At}{At}
+\DeclareMathOperator{\Cat}{Cat}
+\DeclareMathOperator{\Spec}{Spec}
+
+\begin{document}
+
+% Commands
+\def\Res{\res\!}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\Ress}[1]{\res_{#1}\!}
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\xlto}[1]{\stackrel{#1}\lto}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\md}[1]{\mathscr{#1}}
+\def\l{\,|\,}
+\def\sgn{\textup{sgn}}
+
+\title{Computing with cut systems +}
+\author{Daniel Murfet}
+
+\maketitle
+
+\begin{abstract}
+A cut system has objects, $1$-morphisms and $2$-morphisms, similar to a bicategory. In contrast to the composition of $1$-morphisms in a bicategory, the cut operation on $1$-morphims in a cut system produces representations of Clifford algebras in supercategories rather than bare objects. The motivating example of a cut system refines the bicategory of Landau-Ginzburg models, in which the objects are hypersurface singularities and the $1$-morphisms are matrix factorisations.
+\end{abstract}
+
+\tableofcontents
+
+\section{Composition as a morphism of schemes}
+
+We have now shown that $\LG$ is equivalent to $\cat{L}$, and in this section we explain how to model the composition of $1$-morphisms in this latter bicategory as a morphism of schemes. Throughout $k$ is a $\nQ$-algebra and $R$ any $k$-algebra.
+
+\begin{definition}\label{defn:hmfomegac} Given $W \in R$ the category $\cat{K}(R,W)$ has for its objects tuples
+\be\label{eq:hmfomegacd}
+\left( D, E, l, m, \{ \gamma_i, \gamma_i^{\dagger} \}_{i=1}^m, \{ s_{ij}, s^{\dagger}_{ij}, t_{ij} \}_{i,j=1}^m, \{ z_{ai}, z^\dagger_{ai} \}_{0 \le a \le 1, 1 \le i \le m} \right)
+\ee
+where $m \ge 0$ is an integer and
+\begin{itemize}
+\item A matrix $D \in M_{2r}(R)$ with $D^2 = W \cdot I_{2r}$.
+\item A morphism $E: D \lto D$
+\item An odd matrix $l$ with
+\be\label{eq:defnhmfomega2}
+EE - E = Dl + lD\,.
+\ee
+\item $\gamma_i, \gamma_i^{\dagger} \in M_{2r}(R)$ are closed odd matrices, i.e. morphisms $D \lto D[1]$ for $1 \le i \le m$.
+\item The $s_{ij}, s^\dagger_{ij}, t_{ij} \in M_{2r}(R)$ are odd matrices satisfying, for $1 \le i,j \le m$,
+\begin{align}
+\gamma_i \gamma_j + \gamma_j \gamma_i &= D s_{ij} + s_{ij} D \,,\label{eq:hmfomegac3}\\
+\gamma^\dagger_i \gamma^\dagger_j + \gamma^\dagger_j \gamma^\dagger_i &= D s^\dagger_{ij} + s^\dagger_{ij} D\,,\label{eq:hmfomegac4}\\
+\gamma_i \gamma_j^\dagger + \gamma_j^\dagger \gamma_i &= \delta_{ij} \cdot I_{2r} + D t_{ij} + t_{ij} D\,.\label{eq:hmfomegac5}
+\end{align}
+These homotopies establish that the $\gamma_i, \gamma^\dagger_i$ satisfy Clifford relations.
+\item The $z_{ai}, z^\dagger_{ai} \in M_{2r}(R)$ are odd matrices satisfying, for $1 \le i \le m$,
+\begin{align}
+\gamma_i E - \gamma_i &= D z_{0i} + z_{0i} D\,\label{eq:hmfomegac6}\\
+E \gamma_i - \gamma_i &= D z_{1i} + z_{1i} D\,\label{eq:hmfomegac7}\\
+\gamma^\dagger E - \gamma^\dagger_i &= Dz^\dagger_{0i} + z^\dagger_{0i} D\,\label{eq:hmfomegac8}\\
+E \gamma^\dagger - \gamma^\dagger_i &= Dz^\dagger_{1i} + z^\dagger_{1i} D\,.\label{eq:hmfomegac9}
+\end{align}
+These homotopies establish that the $\gamma_i, \gamma^\dagger_i$ are morphisms in $\hmf(R,W)^\omega$.
+\end{itemize}
+A \emph{morphism} of such tuples
+\[
+\phi: \left( D,E,l, \{ \gamma_i, \gamma_i^{\dagger} \}_{i=1}^m, \ldots \right) \lto \left( D',E',l', \{ \rho_i, \rho_i^{\dagger} \}_{i=1}^m, \ldots \right)
+\]
+is a morphism $\phi: D \lto D'$ of matrix factorisations with the additional property that $E' \phi \simeq \phi$ and $\phi E \simeq E$ and there are homotopies
+\be
+\phi \gamma_i \simeq 0\,, \qquad \rho_i^\dagger \phi \simeq 0
+\ee
+These morphisms are composed by matrix multiplication.
+\end{definition}
+
+\begin{proposition} For potentials $(x,W),(y,V)$ there is an equivalence of categories
+\be\label{eq:equivalence_psi_final}
+\Psi: \cat{K}( k[x,y], V - W ) \lto \cat{L}( W, V )\,.
+\ee
+\end{proposition}
+
+\begin{definition} Given a $k$-algebra $R$ and integers $r \ge 1,m \ge 0, d \ge 0$ let
+\[
+\mathfrak{D}(R, k[x_1,\ldots,x_n],W)_{r,m,d}
+\]
+denote the set of tuples \eqref{eq:hmfomegacd} over the ring $R[x]$ with all matrices of fixed size $2r$ and such that every matrix in the tuple has entries which are polynomials in $R[x]$ which involve only monomials $x^\alpha$ with $|\alpha| \le d$. Here $m$ is the number of Clifford actions.
+\end{definition}
+
+\begin{lemma} Given $W \in k[x_1,\ldots,x_n]$ and integers $r \ge 1, m \ge 0, k \ge 0$ there is a finitely generated $k$-algebra $M(k[x],W)_{r,m,d}$ together with a natural bijection for any $k$-algebra $R$
+\[
+\Hom_{k}( M(k[x],W)_{r,m,d}, R ) \cong \mathfrak{D}( R, k[x], W )_{r,m,d}\,.
+\]
+\end{lemma}
+
+\begin{definition} Given $W \in k[x_1,\ldots,x_n]$ and $r \ge 1,m \ge 0, d \ge 0$ we define the affine $k$-scheme
+\[
+\cat{M}( k[x], W )_{r,m,d} = \Spec\big( M(k[x],W)_{r,m, d} \big)\,.
+\]
+By definition there is an identification of the $k$-points of this scheme with a subset of the objects of the category $\cat{K}( k[x], W )$ since
+\begin{align*}
+\Big( \cat{M}( k[x], W )_{r,m,d} \Big)_k &\cong \Hom_k( M(k[x],W)_{r,m,d}, k )\\
+&\cong \mathfrak{D}( k, k[x], W )_{r,m,d}\\
+&\subseteq \cat{K}( k[x], W )\,.
+\end{align*}
+\end{definition}
+
+\begin{theorem} Given potentials $(x,W), (y,V), (z,U)$ and $r,r' \ge 1$ and $m,m',d,d' \ge 0$ set
+\begin{align*}
+\cat{M}^{W,V}_{r,m,d} &= \cat{M}( k[x,y], V - W )_{r,m,d}\,,\\
+\cat{M}^{V,U}_{r',m',d'} &= \cat{M}( k[y,z], U - V )_{r',m',d'}\,,\\
+\cat{M}^{U,W}_{a, b,c} &= \cat{M}( k[x,z], U - W )_{a,b,c}\,.
+\end{align*}
+There are functions $f,g,h: \mathbb{N}^2 \lto \mathbb{N}$ and morphisms of affine schemes
+\[
+C_{r,r',m,m',d,d'}: \cat{M}^{V,U}_{r,d} \times \cat{M}_{r',d'}^{W,V} \lto \cat{M}_{f(r,r'), g(m,m'),h(d,d')}^{U, W}
+\]
+such that the diagram of sets
+\[
+\xymatrix@C+1pc{
+\big( \cat{M}^{V,U}_{r,m,d} \big)_k \times \big( \cat{M}_{r',m',d'}^{W,V} \big)_k \ar[d] \ar[r]^{C_{r,r',m,m',d,d'}} & \big( \cat{M}_{f(r,r'), g(m,m'),h(d,d')}^{U, W} \big)_k \ar[d]\\
+\cat{K}( k[y,z], U - V ) \times \cat{K}( k[x,y], V - W ) \ar[d]_-{\Psi \times \Psi} & \cat{K}( k[x,z], U - W )\ar[d]^-{\Psi} \\
+\cat{L}( V, U ) \times \cat{L}( W, V ) \ar[r]_-{-\l-} & \cat{L}(W,U)
+}
+\]
+commutes.
+\end{theorem}
+
+\begin{itemize}
+\item The morphisms of schemes $C$ satisfy associativity on the nose. 
+\item Given $(x,W)$ there are integers $r,d$ depending on $(x,W)$ and a morphism of schemes
+\[
+\Spec(k) \lto \cat{M}^{W,W}_{r,d}
+\]
+which embeds the unit $1$-morphism, but we don't know any reasonable way to impose a condition involving this.
+\end{itemize}
+
+Set $\cat{M} = \cat{M}^{W,V}$ and let $\mathscr{H}\!om$ denote the Clifford bundle on $\cat{M} \times \cat{M}$ whose fiber over $( [X], [X'] )$ is $X^{\vee} \l X'$. Consider
+\[
+\xymatrix@C+3pc{
+\cat{M} \times \cat{M} \times \cat{M} \ar[r]^-{1 \times \Delta \times 1} & \cat{M} \times \cat{M} \times \cat{M} \times \cat{M}
+}
+\]
+on the right hand side we have the vector bundle $\mathscr{H}\!om \boxtimes \mathscr{H}\!om$ which has an action of the bundle of Clifford algebras $C_m \boxtimes C_m$. Set $\varphi = 1 \times \Delta \times 1$ and consider the morphism of bundles of Clifford algebras given by the product
+\be\label{eq:morphism_of_clifford}
+\varphi^*( C_m \boxtimes C_m ) \lto C_m
+\ee
+Let $\mathscr{H}\!om$ be the bundle on $\cat{M}^3$ whose fiber over $([X_1], [X_2], [X_3])$ is $X_1^{\vee} \l X_3$. There is a morphism of vector bundles on $\cat{M}^3$
+\[
+\varphi^*\big( \mathscr{H}\!om \boxtimes \mathscr{H}\!om \big) \lto \mathscr{H}\!om
+\]
+compatible with \eqref{eq:morphism_of_clifford} whose fiber is a finite model of composition.
+
+Somehow in this language we encode the fact that the cut is linear in any extra degrees of freedom you add in. This can also be seen in the nature of what happens when you interact the $\mathscr{H}\!om$ bundle with the universal property defining $\cat{M}$.
+
+
+\begin{lemma}\label{lemma:constructingsuper}
+Given a bicategory $\cat{B}$ with the structure of a supercategory on $\cat{B}(a,b)$ for all pairs $a,b$, and natural isomorphisms $\tau$, suppose that \eqref{eq:psiunitor1}-\eqref{eq:psilastdia} commute. Then with $\Psi, \xi$ and $\gamma$ defined as above, $\cat{B}$ is a superbicategory.
+\end{lemma}
+\begin{proof}
+The proof is an easy but somewhat lengthy exercise, which we omit.
+\end{proof}
+
+\bibliographystyle{amsalpha}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BHLS03}
+
+% reference for \lambda-calculus
+% reference for cut
+% geometry of interaction
+
+\bibitem{barneslambe}
+D.~W.~Barnes and L.~A.~Lambe, \emph{A fixed point approach to homological perturbation theory}, Proc. Amer.
+  Math. Soc. \textbf{112} Number 3 (1991), 881--892.
+
+\bibitem{bor94}
+F.~Borceux, \textsl{Handbook of categorical algebra $1$}, volume $50$ of \textsl{Encyclopedia of Mathematics and its Applications}, Cambridge University Press, Cambridge, 1994.
+
+\bibitem{buchweitz_flenner}
+R.-O.~Buchweitz and H.~Flenner, \textsl{A semiregularity map for modules and applications to deformations}, Compositio Math. \textbf{137} (2003), 135--210.
+    
+\bibitem{ct1007.2679}
+A.~{C\u ald\u araru} and S.~Willerton, \textsl{The Mukai pairing, I: a categorical approach},
+New York Journal of Mathematics \textbf{16} (2010), 61--98, 
+  \href{http://arxiv.org/abs/0707.2052}{[arXiv:0707.2052]}.
+
+\bibitem{khovhompaper}
+N.~Carqueville and D.~Murfet, \textsl{Computing {K}hovanov-{R}ozansky homology and defect fusion}, Algebraic \& Geometric Topology \textbf{14} (2014), 489--537, \href{http://arxiv.org/abs/1108.1081}{[arXiv:1108.1081]}. 
+
+\bibitem{lgdual}
+N.~Carqueville and D.~Murfet, \textsl{Adjunctions and defects in {L}andau-{G}inzburg models}, \href{http://arxiv.org/abs/1208.1481}{[arXiv:1208.1481]}.
+
+\bibitem{lgdual_survey}
+N.~Carqueville and D.~Murfet, \textsl{A toolkit for defect computations in Landau-Ginzburg models}, \href{http://arxiv.org/abs/1303.1389}{[arXiv:1303.1389]}, contribution to the String-Math 2012 proceedings.
+
+\bibitem{ade}
+N.~Carqueville, A.~Ros Camacho and I.~Runkel, \textsl{Orbifold equivalent potentials}, \href{http://arxiv.org/abs/1311.3354}{[arXiv:1311.3354]}.
+
+\bibitem{cr0909.4381}
+N.~Carqueville and I.~Runkel, \textsl{On the monoidal structure of matrix bi-factorisations}, J. Phys.
+  A: Math. Theor. \textbf{43} (2010), 275401,
+  \href{http://arxiv.org/abs/0909.4381}{[arXiv:0909.4381]}.
+  
+\bibitem{crainic}
+M.~Crainic, \emph{On the perturbation lemma, and deformations}, \href{http://arxiv.org/abs/math/0403266}{[arXiv:0403266]}
+
+\bibitem{d0904.4713}
+T.~Dyckerhoff, \textsl{Compact generators in categories of matrix factorizations},
+  Duke Math. J. \textbf{159} (2011), 223--274,
+  \href{http://arxiv.org/abs/0904.4713}{[arXiv:0904.4713]}.
+
+\bibitem{dm1102.2957}
+T.~Dyckerhoff and D.~Murfet, \textsl{Pushing forward matrix factorisations}, Duke Math. J. \textbf{162} (2013), 1249--1311, \href{http://arxiv.org/abs/1102.2957}{[arXiv:1102.2957]}.
+
+\bibitem{ellis_lauda}
+A.~Ellis and A.~Lauda, \textsl{An odd categorification of $U_q(\mathfrak{sl}_2)$}, \href{http://arxiv.org/abs/1307.7816}{[arXiv:1307.7816]}.
+
+\bibitem{friedrich}
+T.~Friedrich, \textsl{{D}irac operations in {R}iemannian geometry}, Graduate studies in mathematics \textbf{25}, AMS (1997).
+  
+\bibitem{girard_llogic}
+J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1) (1987), 1--102.
+
+\bibitem{greuel}
+G.-M.~Greuel, C.~Lossen and E.~Shustin, \textsl{Introduction to singularities and deformations}, Springer (2007).
+
+\bibitem{kang}
+S.-J.~Kang, M.~Kashiwara and S.-J.~Oh, \textsl{Supercategorification of quantum Kac-Moody algebras}, Adv. Math \textbf{242} (2013) 116--162, \href{http://arxiv.org/abs/1206.5933}{[arXiv:1206.5933]}.
+
+\bibitem{kang2}
+S.-J.~Kang, M.~Kashiwara and S.-J.~Oh, \textsl{Supercategorification of quantum Kac-Moody algebras II}, \href{http://arxiv.org/abs/1303.1916}{[arXiv:1303.1916]}.
+
+\bibitem{McNameethesis}
+D.~McNamee, \textsl{On the mathematical structure of topological defects in
+  {L}andau-{G}inzburg models}, MSc Thesis, Trinity College Dublin, 2009.
+  
+\bibitem{cutsystems2}
+D.~Murfet, \textsl{Computing with cut systems II: linear logic}, in progress.
+
+\bibitem{selinger}
+P.~Selinger, \textsl{Lecture notes on the {L}ambda calculus}, \href{http://arxiv.org/abs/0804.3434}{[arXiv:0804.3434]}.
+
+\bibitem{vistoli}
+A.~Vistoli, \textsl{Notes on {G}rothendieck topologies, fibered categories and descent theory}, \href{http://arxiv.org/abs/math/0412512}{[arXiv:0412512]}.
+
+\bibitem{yoshino98}
+Y.~Yoshino, \textsl{Tensor products of matrix factorizations}, Nagoya Math. J.
+  \textbf{152} (1998), 39--56.
+  
+\end{thebibliography}
+
+\end{document}
