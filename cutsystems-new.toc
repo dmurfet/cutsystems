@@ -7,13 +7,13 @@
 \contentsline {subsection}{\numberline {2.2}The superbicategory of Landau-Ginzburg models}{9}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Partial derivatives as homotopies}{11}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Clifford algebras}{12}{subsection.2.4}
-\contentsline {section}{\numberline {3}The Clifford thickening}{14}{section.3}
-\contentsline {section}{\numberline {4}The superbicategory $\mathcal {L}$}{17}{section.4}
-\contentsline {section}{\numberline {5}The equivalence of $\mathcal {L}$ and $\mathcal {LG}$}{23}{section.5}
-\contentsline {subsection}{\numberline {5.1}Homological perturbation and fixed points}{25}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Clifford actions and Koszul complexes}{28}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}The finite model}{35}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}The equivalence of $\mathcal {L}$ and $\mathcal {LG}$}{40}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Example: the Hom complex}{42}{subsection.5.5}
+\contentsline {subsection}{\numberline {2.5}The Clifford thickening}{14}{subsection.2.5}
+\contentsline {section}{\numberline {3}The superbicategory $\mathcal {L}$}{17}{section.3}
+\contentsline {section}{\numberline {4}The equivalence of $\mathcal {L}$ and $\mathcal {LG}$}{24}{section.4}
+\contentsline {subsection}{\numberline {4.1}Homological perturbation and fixed points}{25}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Clifford actions and Koszul complexes}{28}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}The finite model}{35}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}The equivalence of $\mathcal {L}$ and $\mathcal {LG}$}{40}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Example: the Hom complex}{42}{subsection.4.5}
 \contentsline {section}{\numberline {A}Tensor products in supercategories}{44}{appendix.A}
 \contentsline {section}{\numberline {B}Constructing superbicategories}{47}{appendix.B}
