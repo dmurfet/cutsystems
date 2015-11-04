@@ -94,13 +94,13 @@
 \def\l{\,|\,}
 \def\sgn{\textup{sgn}}
 
-\title{Computing with cut systems +}
+\title{Computing with cut systems}
 \author{Daniel Murfet}
 
 \maketitle
 
 \begin{abstract}
-The bicategory $\LG$ of Landau-Ginzburg models has polynomials as objects and matrix factorisations as $1$-morphisms. The composition of $1$-morphisms in this bicategory naturally produces infinite rank matrix factorisations, which is a nuisance. In this paper we define a bicategory $\cat{L}$ which is equivalent to $\LG$ but for which composition of $1$-morphisms produces finite rank matrix factorisations equipped with the action of a Clifford algebra.
+The bicategory $\LG$ of Landau-Ginzburg models has polynomials as objects and matrix factorisations as $1$-morphisms. The composition of $1$-morphisms naturally produces infinite rank matrix factorisations, which is a nuisance. In this paper we define a bicategory $\cat{L}$ which is equivalent to $\LG$ but for which composition of $1$-morphisms produces finite rank matrix factorisations equipped with the action of a Clifford algebra.
 \end{abstract}
 
 \tableofcontents
@@ -145,7 +145,7 @@ After some refinements\footnote{See Remark \ref{remark:relation_to_toby_paper} f
 \end{gather}
 does indeed lift to a morphism of the parametrising schemes - fulfilling the original goal. The schemes parametrising $1$-morphisms in $\cat{L}$ together with the morphisms of schemes lifting composition, and vector bundles encoding the $2$-morphisms, is what we refer to as a \emph{cut system} in the sequel \cite{cutsystems2}. However the present paper is concerned only with defining the superbicategory $\cat{L}$ and proving that it is equivalent to $\LG$.
 
-The paper is structured as follows: in Section \ref{section:background} we recall the definition of superbicategories and Clifford algebras, and introduce the Clifford thickening of a supercategory. In Section \ref{section:lg_cut_system} we define $\cat{L}$ and in Section \ref{section:equivllg} we prove it is equivalent to $\LG$.
+The paper is structured as follows: in Section \ref{section:background} we recall the definition of superbicategories and Clifford algebras, and introduce the Clifford thickening of a supercategory. In Section \ref{section:lg_cut_system} we define $\cat{L}$ and in Section \ref{section:equivllg} we prove it is equivalent to $\LG$ as a superbicategory without units. We do not consider unit $1$-morphisms here because $\cat{L}$ does not make working with units any simpler.
 
 \subsection{Applications}
 
@@ -185,7 +185,9 @@ With $\cat{B} = \LG$ an example of a morphism is given in Figure \ref{fig:wsh-de
 \be\label{eq:value_of_bordism}
 \mathcal{Z}(M): \mathcal{Z}(O_1) \otimes \mathcal{Z}(O_2) \lto \mathcal{Z}(O_3)\,.
 \ee
-We would like to discuss an additional property of the physicist's Landau-Ginzburg model which is not encoded into the data of the functor $\mathcal{Z}$. Namely, it is a consequence of the way the defect conditions $X,Y,Z,Q$ enter the partition function (see for example \cite[(3.16)]{laz}) that the vector spaces $\mathcal{Z}(O_i)$ and linear map $\mathcal{Z}(M)$ should depend continuously on the coefficients defining the defect conditions. To represent this mathematically we might try to present $\mathcal{Z}(O_i)$ as a vector bundle over a scheme parametrising possible defect conditions and $\mathcal{Z}(M)$ as a morphism of these vector bundles. But there are some obstacles.
+We would like to discuss an additional property of the physicist's Landau-Ginzburg model which is not encoded into the data of the functor $\mathcal{Z}$. Namely, it is a consequence of the way the defect conditions $X,Y,Z,Q$ enter the partition function (see for example \cite[(3.16)]{laz}) that the vector spaces $\mathcal{Z}(O_i)$ and linear map $\mathcal{Z}(M)$ should depend continuously on the coefficients defining the defect conditions (TODO of course not). 
+
+To represent this mathematically we might try to present $\mathcal{Z}(O_i)$ as a vector bundle over a scheme parametrising possible defect conditions and $\mathcal{Z}(M)$ as a morphism of these vector bundles. But there are some obstacles.
 % \cite[(2.9)]{dkr1107.0495} 
 
 Consider the incoming circle $O_2$ with two points marked $X,Y$. The construction gives
@@ -232,6 +234,8 @@ Since $\cat{L}$ and $\LG$ are equivalent, the two ways \eqref{eq:wuhe20},\eqref{
 %\mathcal{Z}(M) \in \mathcal{Z}(O) \cong Jac(V)
 %\]
 %By virtue of the above discussion, we may think of $\mathcal{Z}(M)$ as a \emph{section} of the trivial vector bundle with fiber $Jac(V)$ over the scheme $\mathscr{M}(W,V)$ which parametrises $1$-morphisms from $W$ to $V$ in $\LG$. If this section is not identically zero, then $V$ is called a \emph{generalised orbifold} of $W$ \cite{??} and it is of great interest to know when this is the case. From what we have said, it is clear that this is essentially a question of the geometry of $\mathscr{M}(W,V)$.
+
+TODO: discuss $A_\infty$ algebras. If we want to understand how minimal models vary with the coefficients, and where the jumps occur, we need an intermediate finite object over blah since minimal models only work well over a field.
 
 \subsubsection{Semantics of logic}
 
@@ -303,7 +307,7 @@ There are isomorphisms of graded modules $\cat{C}^*(X, \Psi Y) \cong \Psi \cat{C
 If $\cat{C}$ is a supercategory then there is a functor $\Psi^\omega: \cat{C}^\omega \lto \cat{C}^\omega$ defined on objects by $\Psi(X,e) = (\Psi X, \Psi e)$ and a natural isomorphism $\xi: \Psi^\omega \circ \Psi^\omega \lto 1_{\cat{C}^\omega}$ defined by $\xi_{(X,e)} = e \xi_X$. The tuple $(\cat{C}^\omega, \Psi^\omega, \xi^\omega)$ is a supercategory.
 \end{remark}
 
-For background on bicategories see \cite{bor94} and the references in \cite{lgdual}. We follow the notation of \cite{lgdual}, so that lower case letters $a,b, \ldots$ denote objects of a bicategory, while upper case letters $X,Y, \ldots$ and greek letters $\alpha, \beta, \ldots$ respectively denote $1$-morphisms and $2$-morphisms. Units are denoted $\Delta$, associators are $\alpha$, and unitors are $\lambda, \rho$. The composition of $Y,X$ is denoted $YX$ or $Y \circ X$.
+For background on bicategories see \cite{bor94, benabou, gray, kellystreet, lack}. We follow the notation of \cite{lgdual}, so that lower case letters $a,b, \ldots$ denote objects of a bicategory, while upper case letters $X,Y, \ldots$ and greek letters $\alpha, \beta, \ldots$ respectively denote $1$-morphisms and $2$-morphisms. Units are denoted $\Delta$, associators are $\alpha$, and unitors are $\lambda, \rho$. The composition of $Y,X$ is denoted $YX$ or $Y \circ X$.
 
 \begin{definition} A \emph{superbicategory} is a bicategory $\cat{B}$ together with the data:
 \begin{itemize}
@@ -342,7 +346,7 @@ N \otimes M[1] &\lto (N \otimes M)[1], \qquad n \otimes m \mapsto (-1)^{|n|} n \
 satisfy the conditions in Appendix \ref{section:constructing_superbicategories} and therefore give the bicategory of $\mathbb{Z}_2$-graded algebras and bimodules the structure of a superbicategory.
 \end{example}
 
-\begin{definition} Given two superbicategories $\cat{B}, \cat{C}$ a \emph{lax superfunctor} $\Phi: \cat{B} \lto \cat{C}$ is a lax functor together with, for each object $a$ in $\cat{B}$, a $2$-morphism
+\begin{definition}\label{defn:laxsuperfunctor} Given two superbicategories $\cat{B}, \cat{C}$ a \emph{lax superfunctor} $\Phi: \cat{B} \lto \cat{C}$ is a lax functor together with, for each object $a$ in $\cat{B}$, a $2$-morphism
 \[
 \kappa_a: \Psi_{\Phi a} \lto \Phi( \Psi_a )
 \]
@@ -983,7 +987,7 @@ In \emph{ibid.} we constructed finite models of convolutions $Y \circ X$ one pai
 
 \section{The equivalence of $\cat{L}$ and $\LG$}\label{section:equivllg}
 
-We prove that the cut functor defined in Section \ref{section:lg_cut_system} models composition in $\LG$ by providing an equivalence of this bicategory with $\cat{L}$. This is done by presenting the cut $Y \l X$ with its Clifford action as the solution of the problem of finding a finite model for the matrix factorisation $Y \otimes X$ over $k[x,z]$.
+We prove that the cut functor defined in Section \ref{section:lg_cut_system} models composition in $\LG$ by providing an equivalence of this superbicategory with $\cat{L}$. This is done by presenting the cut $Y \l X$ with its Clifford action as the solution of the problem of finding a finite model for the matrix factorisation $Y \otimes X$ over $k[x,z]$.
 
 As was mentioned in Section \ref{section:superbicatLG}, $Y \otimes X$ is a matrix factorisation of infinite rank over $k[x,z]$. The obvious notion of a ``finite model'' would be a finite rank matrix factorisation to which $Y \otimes X$ is homotopy equivalent, but providing such a finite model generically seems impossible. We propose a different notion of finite model based on Clifford representations, and solve the problem in this setting. The solution we give here builds on earlier progress on this problem with Dyckerhoff \cite{dm1102.2957}. 
 
@@ -1040,19 +1044,19 @@ Let $Q$ be a complex of infinite rank free abelian groups. Suppose that the coho
 A \emph{deformation retract} of complexes is a pair of morphisms
 \begin{equation}\label{eq:example_defo_retract}
 \xymatrix@C+2pc{
-C \ar@<-1ex>[r]_\nabla & Q, \ar@<-1ex>[l]_f
+C \ar@<-1ex>[r]_\sigma & Q, \ar@<-1ex>[l]_\pi
 } \quad \phi
 \end{equation}
-and a degree $-1$ operator $\phi: Q \lto Q$ satisfying $f \nabla = 1_C, \nabla f = 1_Q - [d_Q, \phi]$ so that $f, \nabla$ are mutually inverse homotopy equivalences. A deformation retract is \emph{strong} if it satisfies some additional conditions, listed below. The point is that if $C$ is finitely generated, then \eqref{eq:example_defo_retract} gives the desired finite representative in the homotopy equivalence class of $Q$. 
+and a degree $-1$ operator $\phi: Q \lto Q$ satisfying $\pi \sigma = 1_C, \sigma \pi = 1_Q - [d_Q, \phi]$ so that $\pi, \sigma$ are mutually inverse homotopy equivalences. A deformation retract is \emph{strong} if it satisfies some additional conditions, listed below. The point is that if $C$ is finitely generated, then \eqref{eq:example_defo_retract} gives the desired finite representative in the homotopy equivalence class of $Q$. 
 
 \begin{example}\label{example:koszulsplit} Consider the following diagram of complexes of $k$-modules
 \[
 \xymatrix@C+2pc@R+1pc{
-0 \ar[d] \ar@<-1ex>[r]_-{\nabla} & k[x] \ar@<-1ex>[l]_-{f} \ar[d]^-{x}\\
-k \ar@<-1ex>[r]_-{\nabla} & k[x] \ar@<-1ex>[l]_-{f} \ar@/_3pc/@{.>}[u]_-{\phi}
+0 \ar[d] \ar@<-1ex>[r] & k[x] \ar@<-1ex>[l] \ar[d]^-{x}\\
+k \ar@<-1ex>[r]_-{\sigma} & k[x] \ar@<-1ex>[l]_-{\pi} \ar@/_3pc/@{.>}[u]_-{\phi}
 }
 \]
-in which the first column is the complex $C$ which has $k$ concentrated in degree zero, and the second column $Q$ is the Koszul complex on $x$. The map $f: k[x] \lto k$ sends every polynomial to its constant term, while $\nabla: k \lto k[x]$ is the inclusion of the constants. The operator $\phi$ is defined by $\phi( x^n ) = x^{n-1}$ and $\phi(1) = 0$. Together these maps are a deformation retract giving $k$ as the ``finite model'' of $Q$.
+in which the first column is the complex $C$ which has $k$ concentrated in degree zero, and the second column $Q$ is the Koszul complex on $x$. The map $\pi: k[x] \lto k$ sends every polynomial to its constant term, while $\sigma: k \lto k[x]$ is the inclusion of the constants. The operator $\phi$ is defined by $\phi( x^n ) = x^{n-1}$ and $\phi(1) = 0$. Together these maps are a deformation retract giving $k$ as the ``finite model'' of $Q$.
 \end{example}
 
 Suppose now that a deformation retract computing a finite representative for $Q$ cannot be found immediately, but that we know how to decompose the differential as $d_Q = d + \tau$ in such a way that there is a finite representative for the complex $(Q,d)$. The perturbation lemma allows us, with some conditions, to ``mix in'' the operator $\tau$ to obtain a finite model for the original complex $Q$.
@@ -1073,25 +1077,25 @@ The condition (ii) says that $\phi$ is a \emph{fixed point} of the operator $F(x
 \begin{definition} A \emph{strong deformation retract} of linear factorisations of $W$ is a pair of morphisms of linear factorisations
 \begin{equation}\label{eq:defn_sdr}
 \xymatrix@C+2pc{
-(M,d) \ar@<-1ex>[r]_\nabla & (A,d), \ar@<-1ex>[l]_f
+(M,d) \ar@<-1ex>[r]_\sigma & (A,d), \ar@<-1ex>[l]_\pi
 } \quad \phi
 \end{equation}
 together with a degree $-1$ operator $\phi: A \lto A$ satisfying
 \begin{itemize}
-\item[(i)] $f \nabla = 1_M$,
-\item[(ii)] $\nabla f = 1_A - [d, \phi]$,
+\item[(i)] $\pi \sigma = 1_M$,
+\item[(ii)] $\sigma \pi = 1_A - [d, \phi]$,
 \item[(iii)] $\phi^2 = 0$,
-\item[(iv)] $\phi \nabla = 0$,
-\item[(v)] $f \phi = 0$.
+\item[(iv)] $\phi \sigma = 0$,
+\item[(v)] $\pi \phi = 0$.
 \end{itemize}
 A \emph{morphism} of strong deformation retracts is a commutative diagram
 \[
 \xymatrix@C+2pc{
-(M,d) \ar[d]_{\alpha} \ar@<-1ex>[r]_\nabla & (A,d)\ar[d]^\beta \ar@<-1ex>[l]_f\\
-(M',d') \ar@<-1ex>[r]_{\nabla'} & (A',d') \ar@<-1ex>[l]_{f'}
+(M,d) \ar[d]_{\alpha} \ar@<-1ex>[r]_\sigma & (A,d)\ar[d]^\beta \ar@<-1ex>[l]_\pi\\
+(M',d') \ar@<-1ex>[r]_{\sigma'} & (A',d') \ar@<-1ex>[l]_{\pi'}
 }
 \]
-that is, a pair of morphisms $\alpha, \beta$ such that $\beta \nabla = \nabla' \alpha$, $\alpha f = f' \beta$ and $\phi' \beta = \beta \phi$.
+that is, a pair of morphisms $\alpha, \beta$ such that $\beta \sigma = \sigma' \alpha$, $\alpha \pi = \pi' \beta$ and $\phi' \beta = \beta \phi$.
 \end{definition}
 
 We follow the conventions of \cite{barneslambe} in defining strong deformation retracts; up to a sign this the same as the special deformation retracts of \cite{crainic} and \cite{dm1102.2957}. Namely, a strong deformation retract in the above sense is the same as a special deformation retract in the sense of \emph{ibid.} with $h = - \phi$.
@@ -1099,20 +1103,20 @@ We follow the conventions of \cite{barneslambe} in defining strong deformation r
 \begin{lemma}\label{lemma:equivocate} There is an equivalence between the category of splitting homotopies $\cat{C}_1$ and the category of  strong deformation retracts $\cat{C}_2$.
 \end{lemma}
 \begin{proof}
-We briefly recall the construction from \cite[p.883]{barneslambe}, which is not stated in terms of categories but is obviously functorial. Given a strong deformation retract \eqref{eq:defn_sdr} the data $(A, \phi)$ is a splitting homotopy. In the reverse direction, if $(A, \phi)$ is a splitting homotopy then $\pi = 1_A - [d, \phi]$ is idempotent and we define the linear factorisation $M = \operatorname{im}(\phi)$ with the associated projection $f$ and inclusion $\nabla$. Then this is a strong deformation retract, together with the original $\phi$.
+We briefly recall the construction from \cite[p.883]{barneslambe}, which is not stated in terms of categories but is obviously functorial. Given a strong deformation retract \eqref{eq:defn_sdr} the data $(A, \phi)$ is a splitting homotopy. In the reverse direction, if $(A, \phi)$ is a splitting homotopy then $e = 1_A - [d, \phi]$ is idempotent and we define the linear factorisation $M = \operatorname{im}(e)$ with the associated projection $\pi$ and inclusion $\sigma$. Then this is a strong deformation retract, together with the original $\phi$.
 \end{proof}
 
 %Taking splitting homotopies as the primary object has the advantage of hiding some of the incidental complexity in the perturbation lemma.
 Here is the problem that the formalism is designed to solve: suppose $(A,d)$ is a linear factorisation of $W$ and that $\tau$ is a degree $+1$ operator on $A$ such that $(A, d + \tau)$ is a linear factorisation of $V$ (possibly different to $W$). This $\tau$ is called the \emph{perturbation}.
 
-\begin{definition} Given a splitting homotopy $\phi$ on $(A,d)$ the \emph{transference problem} is to find a splitting homotopy $\phi'$ on $(A, d + \tau)$ such that $\im(\pi) \cong \im(\pi')$ as graded $R$-modules, where $\pi = 1_A - [d, \phi]$ and $\pi' = 1_A - [d + \tau, \phi']$. 
+\begin{definition} Given a splitting homotopy $\phi$ on $(A,d)$ the \emph{transference problem} is to find a splitting homotopy $\phi'$ on $(A, d + \tau)$ such that $\im(e) \cong \im(e')$ as graded $R$-modules, where $e = 1_A - [d, \phi]$ and $e' = 1_A - [d + \tau, \phi']$. 
 \end{definition}
 
 That is, with $\xi = d + \tau$ the problem is to find a fixed point of the operator
 \[
 F(x) = x \xi x
 \]
-among operators with $x^2 = 0$ satisfying the boundary condition $\im(1_A - [d,x]) \cong \im(\pi)$. If $\phi \tau$ has finite order, i.e. $(\phi \tau)^m = 0$ for some $m$, then
+among operators with $x^2 = 0$ satisfying the boundary condition $\im(1_A - [d,x]) \cong \im(e)$. If $\phi \tau$ has finite order, i.e. $(\phi \tau)^m = 0$ for some $m$, then
 \[
 \phi_\infty = \sum_{m \ge 0} (-1)^m (\phi \tau)^m \phi = \phi - \phi \tau \phi + \phi \tau \phi \tau \phi - \cdots
 \]
@@ -1121,26 +1125,26 @@ is a solution of this fixed point problem:
 \begin{theorem}[Perturbation lemma]\label{theorem:pertlemma} Suppose $\phi \tau$ has finite order. Then $\phi_\infty$ is a splitting homotopy on the linear factorisation $(A, \xi)$ and satisfies the isomorphism condition in the transference problem.
 \end{theorem}
 \begin{proof}
-The proof for complexes \cite[p.886]{barneslambe} goes through unchanged for linear factorisations (see comments in blah).
+The proof for complexes \cite[p.886]{barneslambe} goes through unchanged for linear factorisations, with some minor modifications that are elaborated in \cite[\S 2.5]{lgdual}.
 \end{proof}
 
 The more common statement of the basic perturbation lemma involves the deformation retract corresponding to the splitting homotopy $\phi_\infty$ under the equivalence of Lemma \ref{lemma:equivocate}. The statement is that given a splitting homotopy $\phi$ as above with associated deformation retract \eqref{eq:defn_sdr} there is a strong deformation retract
 \begin{equation}\label{eq:perturbedsdr}
 \xymatrix@C+2pc{
-(M,d_\infty) \ar@<-1ex>[r]_{\nabla_\infty} & (A, \xi), \ar@<-1ex>[l]_{f_\infty}
+(M,d_\infty) \ar@<-1ex>[r]_{\sigma_\infty} & (A, \xi), \ar@<-1ex>[l]_{\pi_\infty}
 } \quad \phi_\infty
 \end{equation}
 where $A = \tau( 1 + \phi \tau )^{-1} = \sum_{m \ge 0} (-1)^m \tau (\phi \tau)^m$ and
 \begin{align*}
-\nabla_\infty &= \nabla - \phi A \nabla,\\
-f_\infty &= f - f A \phi,\\
-d_\infty &= d + f A \nabla\,.
+\sigma_\infty &= \sigma - \phi A \sigma,\\
+\pi_\infty &= \pi - \pi A \phi,\\
+d_\infty &= d + \pi A \sigma\,.
 \end{align*}
 As explained in \cite{barneslambe}, to derive these formulas one has only to notice that the sub-complex in the deformation retract associated to $\phi_\infty$ can, by the isomorphism
 \[
-\im(1 - [\xi, \phi_\infty]) \cong \im(\pi) = M
+\im(1 - [\xi, \phi_\infty]) \cong \im(e) = M
 \]
-be identified with $M$, and the induced maps are the $\nabla_\infty, f_\infty, d_\infty$ given above. It is also possible to give a direct proof as in \cite{crainic}. To see that $\phi_\infty = (1 + \phi \tau)^{-1} \phi$ is the universal solution in the input data $\phi, d$ and $\tau$, one just studies the fixed point equation $F(x) = x \xi x$ and develops a recurrence relation \cite[p.885]{barneslambe}.
+be identified with $M$, and the induced maps are the $\sigma_\infty, \pi_\infty, d_\infty$ given above. It is also possible to give a direct proof as in \cite{crainic}. %To see that $\phi_\infty = (1 + \phi \tau)^{-1} \phi$ is the universal solution in the input data $\phi, d$ and $\tau$, one studies the fixed point equation $F(x) = x \xi x$ and develops a recurrence relation \cite[p.885]{barneslambe}.
 
 \subsection{Clifford actions and Koszul complexes}\label{section:cliffordactkos}
 % spkos series
@@ -1483,9 +1487,9 @@ According to Strategy \ref{strategy} the first step is to find a finite model of
 \]
 \textbf{First step.} A finite model for $(K, d_K)$ is obtained using connections. The connection $\nabla$ of \eqref{eq:connection_nabla} extends canonically to an operator on $k\llbracket y \rrbracket \otimes_{k[t]} \Omega^*_{k[t]/k}$ where $\Omega^* = \bigwedge \Omega^1$ is the exterior algebra. By identifying $d t_i$ with $\theta_i$ we may make the identification
 \[
-\check{K} := K \otimes_{k[y]} k\llbracket y \rrbracket \cong k\llbracket y \rrbracket \otimes_{k[t]} \Omega^*_{k[t]/k}
+\check{K} := K \otimes_{k[y]} k\llbracket y \rrbracket \cong \Omega^*_{k[t]/k} \otimes_{k[t]} k\llbracket y \rrbracket 
 \]
-so that $\nabla$ becomes identified with a degree $-1$ $k$-linear operator on $\check{K}$.  It is straightforward to check that $[d_K, \nabla]$ is invertible on the graded submodule $\check{K}_{\le -1}$ of nonzero degree terms, and we define
+so that $\nabla$ becomes identified with a degree $-1$ $k$-linear operator on $\check{K}$.  It is straightforward to check (see \cite[Lemma 8.7]{dm1102.2957}) that $[d_K, \nabla]$ is invertible on the graded submodule $\check{K}_{\le -1}$ of negative degree terms (in the usual $\nZ$-grading on the Koszul complex) and we define
 \[
 H = [d_K, \nabla]^{-1} \nabla\,.
 \]
@@ -1613,7 +1617,7 @@ which completes the proof.
 for any sequence of indices $1 \le q_1,\ldots,q_l \le m$.
 \end{lemma}
 \begin{proof}
-Recall that, with $t_i = \partial_{z_i} V$, we have by \cite[Section 10]{dm1102.2957}
+This is implicit in \cite[Section 10]{dm1102.2957}. The formula $\sigma_\infty = \sum_{m \ge 0} (-1)^m(H d_{Y \otimes X})^m \sigma$ is given there, and with $t_i = \partial_{z_i} V$ the calculation that takes place in \cite[(10.3)]{dm1102.2957} yields
 \begin{equation}\label{eq:atiyah_formula_sigma}
 \sigma_\infty = \sum_{s \ge 0} \sum_{p_1,\ldots,p_s} (-1)^{\binom{s+1}{2}} \frac{1}{s!} [ d_{Y \otimes X}, \partial_{t_{p_1}}] \cdots [ d_{Y \otimes X}, \partial_{t_{p_s}}] \theta_{p_1} \cdots \theta_{p_s} + (t \text{ terms})\,.
 \end{equation}
@@ -1704,10 +1708,17 @@ F^{-1}(T) = (X,gf)\,.
 \]
 We may arrange these choices so that if $T$ is \emph{already} finite rank then $F^{-1}(T) = (T, 1_T)$.
 
-\begin{theorem} $\cat{Z}: \LG \lto \cat{L}$ is an equivalence of superbicategories without units.
+\begin{definition} A \emph{strong superfunctor} $F: \cat{C} \lto \cat{D}$ between superbicategories without units is a strong superfunctor in the sense of Definition \ref{defn:laxsuperfunctor}, but without the data related to units. We say further that $F$ is an \emph{equivalence} if 
+\begin{itemize}
+\item for all $a,b \in \cat{C}$, $F_{a,b}: \cat{C}(a,b) \lto \cat{D}(Fa, Fb)$ is an equivalence of categories, and
+\item for all $d \in \cat{D}$ there exists $a \in \cat{C}$ with $Fa \cong c$ in the sense that there are $1$-morphisms $f: Fa \lto c$ and $g: c \lto Fa$ with $fg \cong 1$ and $gf \cong 1$.
+\end{itemize}
+\end{definition}
+
+\begin{theorem} There is an equivalence $\cat{Z}: \LG \lto \cat{L}$ of superbicategories without units.
 \end{theorem}
 \begin{proof}
-The only real content here is to produce a $2$-isomorphism
+We define $\mathcal{Z}$ to be the identity on objects and $\mathcal{Z}_{W,V}$ on $1$- and $2$-morphisms. The only remaining content is to produce a $2$-isomorphism
 \be\label{eq:superfuncvarphi}
 \varphi_{Y,X}: \cat{Z}_{V,U}(Y) \l \cat{Z}_{W,V}(X) \lto \cat{Z}_{W,U}( Y \otimes X )
 \ee
@@ -1741,6 +1752,9 @@ in the Clifford thickening of the idempotent completion of $\hmf(k[x,z],U - W)$,
 
 But by Lemma \ref{lemma:whackamole} the identity map $\varphi_{Y,X} = 1_{Y \l X}$ is such an isomorphism, because the object $(Y \l X, e_m)$ of the idempotent completion by definition splits the idempotent $e_m$ on $Y \l X$. Naturality of \eqref{eq:superfuncvarphi} in $Y,X$ is a consequence of the naturality of \eqref{eq:final_finite_modelagain}, see Proposition \ref{prop:naturality_main_thm}.
 \end{proof}
+
+\begin{remark} Obviously the $1$-morphisms $\Delta_W: W \lto W$ which are the units in $\LG$ are, by virtue of the equivalence $\mathcal{Z}$, also units in $\cat{L}$, so that this is an honest bicategory and $\mathcal{Z}$ an equivalence of bicategories. The reason we do not begin with units in $\cat{L}$ is that the unitors are no simpler in $\cat{L}$ than $\LG$, so there is no real point to introducing them.
+\end{remark}
 
 \subsection{Example: the Hom complex}\label{example:computing_homs}
 
@@ -2083,6 +2097,9 @@ The proof is an easy but somewhat lengthy exercise, which we omit.
 D.~W.~Barnes and L.~A.~Lambe, \emph{A fixed point approach to homological perturbation theory}, Proc. Amer.
   Math. Soc. \textbf{112} Number 3 (1991), 881--892.
 
+\bibitem{benabou}
+J.~B\'{e}nabou, \textsl{Introduction to bicategories}, Reports of the Midwest Category Seminar, Springer, 1967.
+
 \bibitem{bor94}
 F.~Borceux, \textsl{Handbook of categorical algebra $1$}, volume $50$ of \textsl{Encyclopedia of Mathematics and its Applications}, Cambridge University Press, Cambridge, 1994.
 
@@ -2137,6 +2154,9 @@ A.~Ellis and A.~Lauda, \textsl{An odd categorification of $U_q(\mathfrak{sl}_2)$
 \bibitem{friedrich}
 T.~Friedrich, \textsl{{D}irac operations in {R}iemannian geometry}, Graduate studies in mathematics \textbf{25}, AMS (1997).
   
+\bibitem{gray}
+J.~W.~Gray, \textsl{Formal category theory: adjointness for 2-categories}, Springer, Berlin, 1974.
+
 %\bibitem{girard_llogic}
 %J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1) (1987), 1--102.
 
@@ -2151,11 +2171,20 @@ A.~Kapustin, \textsl{Topological {F}ield {T}heory, {H}igher {C}ategories, and
   {T}heir {A}pplications},
   \href{http://arxiv.org/abs/1004.2307}{[arXiv:1004.2307]}.
   
+\bibitem{kellystreet}
+G.~M.~Kelly and R.~Street, \textsl{Review of the elements of 2-categories}, In Category Seminar (Proc. Sem., Sydney, 1972/1973), pages 75--103, Lecture Notes in Math., Vol. 420, Springer, Berlin, 1974.
+
 \bibitem{kr0401268}
 M.~Khovanov and L.~Rozansky, \textsl{Matrix factorizations and link homology}, Fund. Math.
   \textbf{199} (2008), 1--91,
   \href{http://arxiv.org/abs/math/0401268}{[math/0401268]}.
   
+\bibitem{lack}
+S.~Lack, \textsl{A $2$-categories companion}, 
+Towards Higher Categories, 
+The IMA Volumes in Mathematics and its Applications \textbf{152} (2010), 105--191, 
+\href{http://arxiv.org/abs/math/0702535}{[math/0702535]}.
+
 \bibitem{laz}
 C.~I.~Lazaroiu, \textsl{On the boundary coupling of topological {L}andau-{G}inzburg models}, JHEP 0505 (2005), no. 037 [hep-th/0312286].
   
