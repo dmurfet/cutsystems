@@ -740,3 +740,91 @@ where $A = d_X( 1 + H d_X )^{-1}$ and $\sigma_\infty = \sigma - H A \sigma$.
 \begin{proof}
 We need only justify why in \eqref{eq:perturbedsdr} we have $d_\infty = d_X$ and $f_\infty = \pi$. But this follows from $H \sigma = 0$ and $\pi H = 0$.
 \end{proof}
+
+\subsubsection{Topological field theory}
+
+The bicategory $\LG$ arises in topological field theory (TFT) as the data necessary to define a two-dimensional topological field theory with defects \cite{k1004.2307,dkr1107.0495}. It is expected that such a TFT should be associated to any suitably nice bicategory $\cat{B}$. In the formalisation of \cite[\S 3.1]{dkr1107.0495} the associated TFT is a symmetric monoidal functor
+\[
+\mathcal{Z}: \operatorname{Bord}_{2,1} \lto \operatorname{Vect}_\nC
+\]
+where the symmetric monoidal category $\operatorname{Bord}_{2,1}$ is defined roughly as follows: the objects are disjoint unions of (collared) circles labelled with objects and $1$-morphisms of $\cat{B}$, and the morphisms are diffeomorphism equivalence classes of two-dimensional manifolds with boundary and a labelled network of ``defects''.
+
+\begin{figure}[bt]
+$$
+  \raisebox{-75pt}{\begin{picture}(300,130)
+  \put(0,0){\scalebox{0.6}{\includegraphics{pic02.eps}}}
+  \put(0,0){
+     \setlength{\unitlength}{.55pt}\put(-22,-8){
+%     \put(136,224)   {$ \phi_\text{in} $}
+%     \put(140, 22)   {$ \phi_\text{in} $}
+%     \put(433,142)   {$ \phi_\text{out} $}
+	 \put(295,190)   {$ {\scriptstyle Y} $}
+	 \put(240,190)   {$ {\scriptstyle X} $}
+	 \put(335,85)   {$ {\scriptstyle Z} $}
+	 \put(390,105)   {$ {\scriptstyle Q} $}
+     \put(510,180)   {$ O_{3} $}
+     \put( 10,230)   {$ O_{1} $}
+     \put( 10,110)   {$ O_{2} $}
+     }\setlength{\unitlength}{1pt}}
+  \end{picture}}
+$$
+\caption{A world-sheet $M$ with defect lines from $\,(O_1,O_2)\,$ to
+$\,(O_{3})$.}
+\label{fig:wsh-defect}
+\end{figure}
+
+With $\cat{B} = \LG$ an example of a morphism is given in Figure \ref{fig:wsh-defect}. The two-dimensional regions of $M$ are labelled with potentials and the defect lines are labelled with $1$-morphisms in $\LG$, that is, matrix factorisations. In the special case where we use a single label $W(x)$ for all regions, the labels $X,Y,Z,Q$ for the defect lines are all chosen from the set of $1$-morphisms $W \lto W$. The value of $\mathcal{Z}$ on $M$ is a $\nC$-linear map
+\be\label{eq:value_of_bordism}
+\mathcal{Z}(M): \mathcal{Z}(O_1) \otimes \mathcal{Z}(O_2) \lto \mathcal{Z}(O_3)\,.
+\ee
+We would like to discuss an additional property of the physicist's Landau-Ginzburg model which is not encoded into the data of the functor $\mathcal{Z}$. Namely, it is a consequence of the way the defect conditions $X,Y,Z,Q$ enter the partition function (see for example \cite[(3.16)]{laz}) that the vector spaces $\mathcal{Z}(O_i)$ and linear map $\mathcal{Z}(M)$ should depend continuously on the coefficients defining the defect conditions (TODO of course not). 
+
+To represent this mathematically we might try to present $\mathcal{Z}(O_i)$ as a vector bundle over a scheme parametrising possible defect conditions and $\mathcal{Z}(M)$ as a morphism of these vector bundles. But there are some obstacles.
+% \cite[(2.9)]{dkr1107.0495} 
+
+Consider the incoming circle $O_2$ with two points marked $X,Y$. The construction gives
+\be\label{eq:zo2orig}
+\mathcal{Z}(O_2) := \Hom_{\LG(W,W)}( \Delta_W, Y^{\vee} \otimes X) \cong H^0 \Hom_{\nC[x,x']}( Y, X )
+\ee
+which is the vector space of $2$-morphisms $Y \lto X$ in $\LG(W,W)$. Now suppose that the defect conditions are made to depend on parameters 
+\[
+Y = Y(t_1,\ldots,t_r)\,, \qquad X = X(u_1,\ldots,u_s)
+\]
+which satisfy their own equations and cut out a parametrising scheme $\mathscr{M}_Y \times \mathscr{M}_X \subseteq \mathbb{A}^{r+s}$. The question is: what kind of global object $\mathcal{Z}(O_2)$ on $\mathscr{M}_Y \times \mathscr{M}_X$ is formed by the finite-dimensional vector spaces
+\[
+\mathcal{Z}(O_2)_{P,Q} := H^0 \Hom_{\nC[x,x']}( Y(P), X(Q) )
+\]
+as $P$ varies over $\mathscr{M}_Y$ and $Q$ over $\mathscr{M}_X$? The problem is that \emph{a priori} we have
+\be\label{eq:cohom_sucks}
+H^* \Hom_{\nC[x,x',t,u]}( Y(t), X(u) ) \Big\vert_{t=P, u=Q} \neq H^* \Hom_{\nC[x,x']}( Y(P), X(Q) )\,.
+\ee
+%This is a particular case of a general phenomenon: any complex of $\nC$-vector spaces $C$ is isomorphic in the derived category $\mathbb{D}(\nC)$ to $\bigoplus_n H^n(C)[n]$, but over a general ring, for instance the coordinate ring of $\mathscr{M}_Y \times \mathscr{M}_X$, this is not the case. 
+This discrepancy suggests that we should take as our global object $\mathcal{Z}(O_2)$ the Hom complex itself, as an object in the derived category\footnote{Note that it is not enough to take the derived category of coherent sheaves, because the Hom complex is made up of non-finitely-generated modules over $\mathscr{M}_Y \times \mathscr{M}_X$.}
+\be\label{eq:wuhe20}
+\mathcal{Z}(O_2) := \Hom_{\nC[x,x',t,u]}( Y(t), X(u) ) \in \mathbb{D}( \operatorname{qcoh} \mathscr{M}_Y \times \mathscr{M}_X )\,.
+\ee
+An alternative (and we believe simpler) approach is to take $\cat{L}$ rather than $\LG$ as the input to the definition of the TFT. Before doing so, let us observe that in the situation where $X,Y$ do not depend on parameters, we may equivalently\footnote{This definition is not quite equivalent, because the displayed composite produces a complex of vector spaces quasi-isomorphic to $H^* \Hom(Y,X)$ rather than $H^0 \Hom(Y,X)$, but this is not important here.} define the vector space $\mathcal{Z}(O_2)$ from \eqref{eq:zo2orig} via the following composite in $\LG$:
+\be\label{eq:composite_intro_o2}
+\xymatrix@C+2pc{
+0 \ar[r]^-X & W(x) - W(x') \ar[r]^-{Y^{\vee}} & 0
+}\,.
+\ee
+Now let $\mathcal{Z}'$ be the TFT defined using the bicategory $\cat{L}$ as input. Then $\mathcal{Z}'(O_2)$ may likewise be computed by the composite \eqref{eq:composite_intro_o2} in $\cat{L}$, which is a $\nZ_2$-graded complex of vector spaces $Y^{\vee} \l X$ equipped with the action of a Clifford algebra. If $Y(t), X(u)$ are allowed to depend on parameters, the cut becomes a vector bundle
+\be\label{eq:orynx}
+\mathcal{Z}'(O_2) := Y^{\vee}(t) \l X(u)
+\ee
+over $\mathscr{M}_Y \times \mathscr{M}_X$ equipped with a differential and compatible Clifford action, such that
+\be
+Y^{\vee}(t) \l X(u) \Big\vert_{t=P,u=Q} \cong Y^{\vee}(P) \l X(Q)
+\ee
+for every point $(P,Q)$.
+
+Since $\cat{L}$ and $\LG$ are equivalent, the two ways \eqref{eq:wuhe20},\eqref{eq:orynx} of reading the composite \eqref{eq:composite_intro_o2} must contain the same information. However, the fact that $\eqref{eq:orynx}$ is a finite rank vector bundle over $\mathscr{M}_Y \times \mathscr{M}_X$ while \eqref{eq:wuhe20} is a complex of (non-finitely generated) quasi-coherent sheaves explains why $\cat{L}$ is better suited to this kind of problem.
+
+%We leave the details to the aforementioned sequel \cite{??}, but here is a simple example which already shows the nontriviality of viewing correlators as functionals of the moduli of the labels on defects. Consider the following bordism which is a morphism from the empty manifold $\emptyset$ to $O$, where $X$ denotes a matrix factorisation of $V(y) - W(x)$. The value of this diagram is an element
+%\[
+%\mathcal{Z}(M) \in \mathcal{Z}(O) \cong Jac(V)
+%\]
+%By virtue of the above discussion, we may think of $\mathcal{Z}(M)$ as a \emph{section} of the trivial vector bundle with fiber $Jac(V)$ over the scheme $\mathscr{M}(W,V)$ which parametrises $1$-morphisms from $W$ to $V$ in $\LG$. If this section is not identically zero, then $V$ is called a \emph{generalised orbifold} of $W$ \cite{??} and it is of great interest to know when this is the case. From what we have said, it is clear that this is essentially a question of the geometry of $\mathscr{M}(W,V)$.
+
+TODO: discuss $A_\infty$ algebras. If we want to understand how minimal models vary with the coefficients, and where the jumps occur, we need an intermediate finite object over blah since minimal models only work well over a field.

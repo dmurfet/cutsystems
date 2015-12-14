@@ -1,19 +1,19 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Applications}{section.1}% 2
-\BOOKMARK [3][-]{subsubsection.1.1.1}{Topological field theory}{subsection.1.1}% 3
-\BOOKMARK [3][-]{subsubsection.1.1.2}{Semantics of logic}{subsection.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1}{A-algebras and minimal models}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{A geometric enrichment of LG}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Semantics of linear logic}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Background}{}% 5
 \BOOKMARK [2][-]{subsection.2.1}{Supercategories}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.2}{The superbicategory of Landau-Ginzburg models}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.3}{Partial derivatives as homotopies}{section.2}% 8
 \BOOKMARK [2][-]{subsection.2.4}{Clifford algebras}{section.2}% 9
 \BOOKMARK [2][-]{subsection.2.5}{The Clifford thickening}{section.2}% 10
-\BOOKMARK [1][-]{section.3}{The superbicategory L}{}% 11
-\BOOKMARK [1][-]{section.4}{The equivalence of L and LG}{}% 12
+\BOOKMARK [1][-]{section.3}{The superbicategory C}{}% 11
+\BOOKMARK [1][-]{section.4}{The equivalence of C and LG}{}% 12
 \BOOKMARK [2][-]{subsection.4.1}{Homological perturbation and fixed points}{section.4}% 13
 \BOOKMARK [2][-]{subsection.4.2}{Clifford actions and Koszul complexes}{section.4}% 14
 \BOOKMARK [2][-]{subsection.4.3}{The finite model}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.4}{The equivalence of L and LG}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{The equivalence of C and LG}{section.4}% 16
 \BOOKMARK [2][-]{subsection.4.5}{Example: the Hom complex}{section.4}% 17
 \BOOKMARK [1][-]{appendix.A}{Tensor products in supercategories}{}% 18
 \BOOKMARK [1][-]{appendix.B}{Constructing superbicategories}{}% 19
