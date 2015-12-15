@@ -103,7 +103,7 @@
 \maketitle
 
 \begin{abstract}
-The bicategory $\LG$ of Landau-Ginzburg models has polynomials as objects and matrix factorisations as $1$-morphisms. The composition of $1$-morphisms naturally produces infinite rank matrix factorisations, which is a nuisance. In this paper we define a bicategory $\L$ which is equivalent to $\LG$ but for which composition of $1$-morphisms produces finite rank matrix factorisations equipped with the action of a Clifford algebra.
+The bicategory $\LG$ of Landau-Ginzburg models has polynomials as objects and matrix factorisations as $1$-morphisms. The composition of these $1$-morphisms produces infinite rank matrix factorisations, which is a nuisance. In this paper we define a bicategory $\L$ which is equivalent to $\LG$ in which composition of $1$-morphisms produces finite rank matrix factorisations equipped with the action of a Clifford algebra. This amounts to a finite model of composition in $\LG$.
 \end{abstract}
 
 \tableofcontents
@@ -111,9 +111,9 @@ The bicategory $\LG$ of Landau-Ginzburg models has polynomials as objects and ma
 \section{Introduction}
 % In the functorial approach to two-dimensional topological field theory with defects \cite{??,??} the data of the field theory is encoded as a bicategory with additional structure, including adjoints for all its $1$-morphisms. In the example of topological sigma models the associated bicategory has smooth projective varieties as objects and Fourier-Mukai kernels as $1$-morphisms \cite{??} while for topological Landau-Ginzburg models the associated bicategory $\LG$ has 
 
-The bicategory $\LG$ of Landau-Ginzburg models has a rich structure, as can be seen by its important role in topological field theory \cite{McNameethesis,lgdual,genorb} homological knot invariants \cite{kr0401268} and $2$-representations of quantum groups \cite{??}, but the definition is still relatively elementary. This makes $\LG$ an attractive algebraic object of study, but for one major wrinkle: the composition operation for $1$-morphisms is infinitary.
+The bicategory $\LG$ of Landau-Ginzburg models has a rich structure, attested to by the existence of adjoints and pivotality \cite{lgdual}, its role in recent important results in topological field theory \cite{genorb,ade} and the theory of homological knot invariants \cite{kr0401268}. This is remarkable in light of the fact that $1$-morphisms are very simple objects, namely, matrices of polynomials which satisfy an equation. This makes $\LG$ an attractive object of study, but for one major wrinkle: the composition operation for $1$-morphisms is infinitary.
 
-The objects of $\LG$ are potentials $W(x)$, while $1$-morphisms $W(x) \lto V(y)$ are matrix factorisations of the difference $V(y) - W(x)$ over $\nC[x,y]$. Such a matrix factorisation is a $\nZ_2$-graded free $\nC[x,y]$-module $X = X^0 \oplus X^1$ together with an odd operator $d_X$ satisfying $d_X^2 = (V(y) - W(x)) \cdot 1_X$. For a third potential $U(z)$, the composition of $1$-morphisms is a functor
+The objects of $\LG$ are potentials $W(x)$, while $1$-morphisms $W(x) \lto V(y)$ are matrix factorisations of the difference $V(y) - W(x)$ over $\nC[x,y]$. Such a matrix factorisation is a $\nZ_2$-graded free $\nC[x,y]$-module $X = X^0 \oplus X^1$ together with an odd operator $d_X$ satisfying $d_X^2 = (V(y) - W(x)) \cdot 1_X$. For a third potential $U(z)$, composition is a functor
 \begin{gather*}
 \LG(V,U) \times \LG(W,V) \lto \LG(W,U)\,,\\
 (Y , X) \mapsto Y \circ X
@@ -123,61 +123,94 @@ defined for matrix factorisations $Y$ of $V - U$ and $X$ of $W - V$ by
 \be
 Y \circ X = \big( Y \otimes_{\nC[y]} X, d_Y \otimes 1 + 1 \otimes d_X \big)\,.
 \ee
-This is the analogue of convolution of Fourier-Mukai kernels in the matrix factorisation setting and suffers from the same defect, namely, the resulting matrix factorisation $Y \circ X$ is a free module of \emph{infinite rank} over $\nC[x,z]$ which is only homotopy equivalent (that is, isomorphic in the homotopy category) to a finite rank matrix factorisation. While this finite model can be proven abstractly to exist, there is no obvious way to describe it as a function of the input data $Y,X$ viewed as matrices of polynomials. This need to deal throughout with infinite rank matrix factorisations introduces a certain minimal level of complexity into the theory, which for many applications is undesirable.
+This is the analogue of convolution of Fourier-Mukai kernels in the matrix factorisation setting and suffers from the same defect, namely, the resulting matrix factorisation $Y \circ X$ is a free module of \emph{infinite rank} over $\nC[x,z]$, which is only homotopy equivalent to a finite rank matrix factorisation. While this finite model can be proven abstractly to exist, there is no obvious way to describe it as a function of the input data $Y,X$. This means that we are stuck with infinite rank matrix factorisations in the theory.
 
-Together with Dyckerhoff we initiated in \cite{dm1102.2957} the study of these finite models in terms of homological perturbation and Atiyah classes, and in the present paper this program reaches its logical conclusion. We introduce a bicategory $\L$ in which the objects are again potentials and where the $1$-morphisms are finite rank matrix factorisations equipped with the structure of a representation of a Clifford algebra. We will prove that this bicategory is equivalent to $\LG$, but is much simpler - in particular, it has a composition operation which is described by a finite number of polynomial functions of the input data.
+Together with Dyckerhoff we initiated in \cite{dm1102.2957} the study of these finite models in terms of homological perturbation and Atiyah classes, and in the present paper this program reaches its logical conclusion. We introduce a bicategory $\L$ in which the objects are again potentials and the $1$-morphisms $W \lto V$ are finite rank matrix factorisations of $V - W$ additionally equipped with the structure of a representation of a Clifford algebra. We will prove that this bicategory is equivalent to $\LG$, but it is much simpler: the composition operation is described by a finite number of polynomial functions of the input data.
 
-More precisely: the composition of $1$-morphisms in $\L$ is a functor
+More precisely, the composition of $1$-morphisms in $\L$ is a functor
 \begin{gather}
-\L(V,U) \times \L(W,V) \lto \L(W,U)\,,\\
+\L(V,U) \times \L(W,V) \lto \L(W,U)\,,\label{eq:cut_functor_intro}\\
 (Y,X) \mapsto Y \l X
 \end{gather}
-which we call the \emph{cut operation}. The definition of the cut is very simple. With $J_V = \nC[y]/(\partial V)$ the Jacobi algebra of $\nC$ (which is a finite-dimensional $\nC$-vector space by the assumption that $V(y)$ is a potential) the cut of $Y$ and $X$ is a finite rank matrix factorisation
+which we call the \emph{cut operation}. Let us describe the cut in the most important case, where $Y, X$ are matrix factorisations as above, not equipped with any additional structure as representations of a Clifford algebra. The Jacobi algebra $J_V = \nC[y_1,\ldots,y_m]/(\partial_{y_1} V, \ldots, \partial_{y_m} V)$ is a finite-dimensional $\nC$-vector space by the assumption that $V(y)$ is a potential, and the cut is defined to be the following finite rank matrix factorisation over $\nC[x,z]$
 \be
 Y \l X = Y \otimes_{\nC[y]} J_V \otimes_{\nC[y]} X = ( Y \otimes_{\nC[y]} X ) / (\partial V) (Y \otimes_{\nC[y]} X )
 \ee
-over $\nC[x,z]$
+equipped with a family of odd closed operators $\{\ferm_i, \fermc_i\}_{i=1}^m$ defined by
+\begin{equation}\label{eq:intro_clifford_act1_intro}
+\ferm_i = \At_i\,, \qquad \fermc_i = - \partial_{y_i}(d_X) - \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}
+\end{equation}
+where the $\At_q$ are Atiyah classes. These operators satisfy Clifford relations
+\be\label{eq:clifford_relations_intro}
+\ferm_i \ferm_j + \ferm_j \ferm_i = 0, \qquad \fermc_i \fermc_j + \fermc_j \fermc_i = 0, \qquad \ferm_i \fermc_j + \fermc_j \ferm_i = \delta_{ij}
+\ee
+up to homotopy (see Theorem \ref{theorem:cut_is_rep}). The differential on $Y \l X$ and the Clifford operators can be written explicitly as matrices over $\nC[x,z]$, where the coefficients of the monomials in each row and column are polynomials in the monomial coefficients of $d_Y, d_X$ and $V$. Thus, the cut operation is a polynomial function of its inputs and, in particular, infinite rank matrix factorisations are banished. 
 
-equipped with odd operators $\ferm_i, \fermc_i$ satisfying Clifford relations
-\begin{gather*}
-\ferm_i e = \ferm_i = e \ferm_i\,, \\
-\fermc_i e = \fermc_i = e \fermc_i\,.
-\end{gather*}
-up to homotopy (see Theorem \ref{theorem:cut_is_rep}). The differential on $Y \l X$ is induced from the differential on $Y \otimes X$ and can be written explicitly as a matrix over $\nC[x,z]$ in terms of the polynomial entries of $d_Y, d_X$. The Clifford action and the matrices which define the Clifford actions on $Y,X$. In particular, infinite rank matrix factorisations are never involved. In the remainder of the introduction we sketch how the cut operation arises from homological perturbation, why Clifford algebras are involved, where the equivalence $\L \cong \LG$ comes from, and our motivations for pursuing this ``finite model'' $\L$ of $\LG$. %In this sense the bicategory $\L$, which we prove is equivalent to $\LG$, provides a ``finite model'' of $\LG$. This has various applications, which we will describe later in the introduction.
-
-The main theorem (Theorem \ref{theorem:htpy_equivalence_main}) says
-\begin{equation}\label{eq:final_finite_model}
+Let us sketch where the cut operation comes from, why Clifford algebras are involved, and why there is an equivalence $\L \cong \LG$. In Section \ref{section:intro_appli} we describe various applications. The main theorem (Theorem \ref{theorem:htpy_equivalence_main}) uses homological perturbation to produce a strong deformation retract, and in particular an isomorphism, in the homotopy category of (infinite rank) matrix factorisations of $U - W$ over $\nC[x,z]$ of the form
+\begin{equation}\label{eq:final_finite_model_intro}
 \xymatrix@C+4pc{
-Y \l X \ar@<-1ex>[r]_-{\Phi^{-1}} & S_m \otimes_k ( Y \otimes X )\ar@<-1ex>[l]_-{\Phi}
+Y \l X \ar@<-1ex>[r]_-{\Phi^{-1}} & S_m \otimes_{\nC} ( Y \otimes X )\ar@<-1ex>[l]_-{\Phi}
 }
 \end{equation}
-The paper is structured as follows: in Section \ref{section:background} we recall the definition of superbicategories and Clifford algebras, and introduce the Clifford thickening of a supercategory. In Section \ref{section:lg_cut_system} we define $\L$ and in Section \ref{section:equivllg} we prove it is equivalent to $\LG$ as a superbicategory without units. We do not consider unit $1$-morphisms here because $\L$ does not make working with units any simpler.
+where $S_m = \bigwedge ( \nC^{\oplus m}[1] )$ denotes the exterior algebra. The algebra $C_m = \End_{\nC}(S_m)$ is a Clifford algebra, and \eqref{eq:final_finite_model_intro} identifies the natural action of $C_m$ on the right hand side with the action of $C_m$ via the aforementioned operators $\ferm_i, \fermc_i$ on the left hand side.
 
-\subsection{$A_\infty$-algebras and minimal models}
+There is a category called the \emph{Clifford thickening} of the homotopy category of matrix factorisations of $U - W$, in which objects are matrix factorisations equipped with a $C_k$-action for some $k$ (i.e. $k$ is allowed to be different for different objects). In this category $S_m \otimes_{\nC} ( Y \otimes X )$ with its $C_m$-action is isomorphic to $Y \otimes X$ with no Clifford action, and so \eqref{eq:final_finite_model_intro} can be read as a natural isomorphism $Y \l X \cong Y \otimes X$. We prove this is suitably functorial in $Y,X$ and therefore defines an equivalence $\L \cong \LG$.
 
-The relationship between $\LG$ and $\L$ is similar to the relationship between a DG-algebra and its $A_\infty$-minimal model. Given a DG algebra $A$ over a field $k$, which is infinite-dimensional but has finite-dimensional cohomology, the $A_\infty$-minimal model is an $A_\infty$-structure on the cohomology $H^*(A)$ which is $A_\infty$-quasi-isomorphic to $A$. The tradeoff being made is that $A$ is infinite-dimensional but with a simple structure (i.e. one multiplication map $m_2$) while $H^*(A)$ is finite-dimensional but with possibly an infinite family of higher multiplications. In $\LG$ the composition operation is not described by a finite amount of data, and the price that one pays by going to $\L$ where this is the case, is that the composition has additional structure (a Clifford action). 
-There is a more precise link to $A_\infty$-minimal models. A special case of the equivalence between $\L$ and $\LG$ gives, for a matrix factorisation $X$ of the potential $W(x_1,\ldots,x_m)$ viewed, a strong deformation retract
-\be
-\Phi: S_m \otimes_k \Hom_R(X,X) \lto X^{\vee} \l X\,.
-\ee
-where $S_m = \bigwedge( k \theta_1 \oplus \cdots \oplus k \theta_m )$ is an exterior algbera, $\Hom_R(X,X)$ is the Hom complex. This deformation retract can be used as the input data for the usual construction of an $A_\infty$-minimal on the left hand side, viewed as a DG-algebra.
+\vspace{0.5cm}
 
-\subsection{A geometric enrichment of $\LG$}
+The paper is structured as follows: in Section \ref{section:background} we recall the definition of superbicategories and Clifford algebras, and introduce the Clifford thickening of a supercategory. The reason we need the formalism of supercategories is that we make extensive use of Clifford actions on objects of linear categories, and for this to make sense the categories themselves must be $\nZ_2$-graded (that is, supercategories). In Section \ref{section:lg_cut_system} we define $\L$ and in Section \ref{section:equivllg} we prove it is equivalent to $\LG$ as a superbicategory without units. 
 
-A finite rank matrix factorisation of $V(y) - W(x)$ is a matrix of polynomials
-\[
-D \in M_{2r}( \nC[x,y] ) \qquad \text{ satisfying } \qquad D^2 = (V(y) - W(x)) \cdot I_{2r}
-\]
-where we require that, dividing $D$ into $r \times r$ blocks, the upper left and bottom right blocks are zero matrices. The set of finite rank matrix factorisations is denoted $\LG(W,V)_{fin}$. For technical reasons the category of $1$-morphisms $\LG(W,V)$ contains, in addition to the finite rank matrix factorisations, those infinite rank matrix factorisations which are homotopy equivalent to finite rank ones; this means in particular that the inclusion
-\[
-\LG(W,V)_{fin} \lto \LG(W,V)
-\]
-is an equivalence of categories. If we fix the size $r$ of the blocks and bound the degrees of the monomials appearing in $D$ by some integer $k$, we can parametrise the possible matrix factorisations by the closed points of an affine scheme $\mathscr{M}_{r,k}(W,V)$ whose coordinates are the coefficients of the various monomials in each row and column of $D$. Hence as sets we have
-\begin{equation}\label{eq:param_frmf}
-\LG(W,V)_{fin} = \bigsqcup_{r \ge 1} \bigcup_{k \ge 0} \mathscr{M}_{r,k}(W,V)_{\nC}\,.
+\subsection{Applications}\label{section:intro_appli}
+
+\subsubsection{$A_\infty$-algebras and minimal models}
+
+As a special case of the deformation retract \eqref{eq:final_finite_model_intro} we obtain in Section \ref{example:computing_homs} for any potential $V(y)$ and matrix factorisations $X,X'$ of $V$ a deformation retract of $\nZ_2$-graded complexes of vector spaces
+\begin{equation}\label{eq:final_finite_model_hom}
+\xymatrix@C+4pc{
+(X')^{\vee} \l X \ar@<-1ex>[r]_-{\Phi^{-1}} & S_m \otimes_k \Hom_{\nC[y]}(X', X) \ar@<-1ex>[l]_-{\Phi}
+}
 \end{equation}
+where $\Hom_{\nC[y]}(X',X)$ denotes the Hom-complex. Observe that this is infinite-dimensional (with finite-dimensional cohomology) while $(X')^{\vee} \l X$ is finite-dimensional.
 
-does indeed lift to a morphism of the parametrising schemes - fulfilling the original goal. The schemes parametrising $1$-morphisms in $\L$ together with the morphisms of schemes lifting composition, and vector bundles encoding the $2$-morphisms, is what we refer to as a \emph{cut system} in the sequel \cite{cutsystems2}. However the present paper is concerned only with defining the superbicategory $\L$ and proving that it is equivalent to $\LG$. TODO: A cut system is a bicategory enriched in a certain sense in the category of (indexed families of) affine schemes.
+In the case $X = X'$ the right hand side is a DG-algebra and the deformation retract may be taken as the input to the standard algorithms for producing an $A_\infty$-minimal model of $\End_{\nC[y]}(X)$. It turns out that this input is well-suited for actually doing computations, which we hope to return to elsewhere.
+
+\subsubsection{Cut systems: a geometric enrichment of $\LG$}
+
+The \emph{cut systems} of the title are bicategories enriched over affine schemes. Our primary motivation for introducing $\cat{C}$ is that it can be enriched in this way (whereas $\LG$ cannot, because the composition is infinitary). For context we sketch the definition of a cut system here; the full definition will appear in a sequel to the present paper.
+
+Given potentials $W(x), V(y)$, a matrix factorisation of $V(y) - W(x)$ is after choosing a homogeneous basis just a matrix
+\be\label{eq:intro_capitalD}
+D \in M_{2r}( \nC[x,y] ) \qquad \text{ satisfying } \qquad D^2 = (V(y) - W(x)) \cdot I_{2r}
+\ee
+where we require that, dividing $D$ into $r \times r$ blocks, the upper left and bottom right blocks are zero matrices. If we fix the size $r$ of the blocks and bound the degrees of the monomials appearing in $D$ by some integer $k$, we can parametrise matrix factorisations by the closed points of an affine scheme whose coordinates are the coefficients of the various monomials in each row and column of $D$. 
+
+We may add further coordinates and equations to encode closed odd operators satisfying Clifford relations \eqref{eq:clifford_relations_intro} and, in this way, for a choice of parameters $\lambda = (r, k, \ldots)$ define a scheme $\mathscr{M}_{\lambda}(W,V)$ such that as sets
+\begin{equation}\label{eq:param_frmf}
+\cat{C}(W,V) = \bigcup_{\lambda} \mathscr{M}_{\lambda}(W,V)_{\nC}
+\end{equation}
+where $Z_{\nC}$ denotes the $\nC$-points of a scheme $Z$. The cut operation is a polynomial function of its inputs, so there is an indexed family of morphisms of schemes
+\be\label{eq:enrichment_morphisms_intro}
+\mathscr{M}_\mu(V,U) \times \mathscr{M}_\lambda(W,V) \lto \mathscr{M}_{f(\lambda, \mu)}(W, U)
+\ee
+lifting the functor \eqref{eq:cut_functor_intro} on the level of objects for some function $f(\lambda, \mu)$ of indices. Finally, using the approach of Section \ref{example:computing_homs}, we can define a bundle of Clifford representations
+\be\label{eq:enrichment_intro_bundles}
+\xymatrix{
+\mathscr{H}\! om_{W,V} \ar[d]\\
+\mathscr{M}_\lambda(W,V) \times \mathscr{M}_\lambda(W,V)
+}
+\ee
+which for two finite-rank matrix factorisations $X,X'$ of $V - W$ has for its fiber over the point $(X',X)$ the finite-dimensional Clifford representation $(X')^{\vee} \l X$ as in \eqref{eq:final_finite_model_hom}, which is isomorphic to the Hom-complex $\Hom_{\nC[x,y]}(X',X)$ tensored with a suitable spinor representation. The cut system which enriches $\cat{C}$ consists of the family of schemes $\mathscr{M}_\lambda(W,V)$, the composition morphisms \eqref{eq:enrichment_morphisms_intro}, the bundles \eqref{eq:enrichment_intro_bundles}, and various other data satisfying natural constraints which encode the structure of the bicategory.
+
+% The set of finite rank matrix factorisations is denoted $\LG(W,V)_{fin}$. 
+%For technical reasons the category of $1$-morphisms $\LG(W,V)$ contains, in addition to the finite rank matrix factorisations, those infinite rank matrix factorisations which are homotopy equivalent to finite rank ones; this means in particular that the inclusion
+%\[
+%\LG(W,V)_{fin} \lto \LG(W,V)
+%\]
+%is an equivalence of categories. 
+
+
+
+% does indeed lift to a morphism of the parametrising schemes - fulfilling the original goal. The schemes parametrising $1$-morphisms in $\L$ together with the morphisms of schemes lifting composition, and vector bundles encoding the $2$-morphisms, is what we refer to as a \emph{cut system} in the sequel \cite{cutsystems2}. 
 
 %For various applications, two of which we sketch below, we would like to know that the basic operations of the bicategory $\LG$ respect this additional scheme structure; that is, that these operations are continuous in the coordinates which parametrise the $1$-morphisms. The most important and nontrivial such structure is the composition functor
 %\begin{gather*}
@@ -193,24 +226,26 @@ does indeed lift to a morphism of the parametrising schemes - fulfilling the ori
 % The problem is that this doesn't make sense, because the matrix of polynomials defining the composite $Y \circ X$ contains monomials $x^i y^j z^k$ with $y$'s in them and we have no way to store the coefficients of such monomials in the space $\mathscr{M}(W,U)$. However one can prove that $Y \circ X$ is a summand in the homotopy category of a finite rank matrix factorisation (involving only $x$'s and $z$'s) and even describe this object and the corresponding idempotent explicitly \cite{dm1102.2957}. This is a finite amount of data which can be used to encode $Y \circ X$, so we just need to replace $\mathscr{M}(W,U)$ by some scheme which knows how to store such data.
 
 
-\subsection{Semantics of linear logic}
+\subsubsection{Semantics of linear logic}
 
-In forthcoming work we will use the results of this paper to define a novel semantics of linear logic, in which formulas are interpreted by tuples $(\md{X}, \nC[x], W)$ where $\md{X}$ is a scheme and $W \in \nC[x]$ is a potential. Proofs in the logic are interpreted by certain correspondences between these pairs. To explain briefly why we are forced to use $\L$ rather than $\LG$, we will use the denotation of the Church numeral $\underline{2}$ (see \cite{murfet_ll}).
+In forthcoming work we use the cut system enrichment of $\L$ to define a semantics of linear logic \cite{girard_llogic} in which formulas are interpreted by tuples $(\md{X}, \nC[x], W)$ where $\md{X}$ is a scheme and $W \in \nC[x]$ is a potential. Proofs in the logic are interpreted by certain correspondences between these pairs. Let us briefly explain the general point which leads us to use $\L$ rather than $\LG$, for which we will use the denotation of the Church numeral $\underline{2}$ (see \cite{murfet_ll}).
 
 Let $x$ be a variable of the logic and suppose it has denotation $\llbracket x \rrbracket = (\Spec(\nC), \nC[x], W)$ in the semantics. Let $\mathscr{M} = \mathscr{M}(W,W)$ be the (indexed) affine scheme parametrising $1$-morphisms $X: W \lto W$ in $\L$, as discussed above. Then the semantics works as follows:
 \begin{gather*}
 \llbracket x \multimap x \rrbracket = \big(\Spec(\nC), \nC[x,x'], W(x) - W(x') \big)\,,\\
 \llbracket {!}( x \multimap x ) \rrbracket = \big( \mathscr{M}, \nC, 0 \big)\,.
 \end{gather*}
-The proof $\underline{2}$ of the sequent ${!}(x \multimap x) \vdash x \multimap x$ has for its denotation a correspondence between $\llbracket {!}( x \multimap x ) \rrbracket$ and $\llbracket x \multimap x \rrbracket$, which concretely means that $\llbracket \underline{2} \rrbracket$ is a bundle over the scheme $\mathscr{M}$ whose fiber over a loop $X$, viewed as a point $[X] \in \mathscr{M}$, is the square $X \l X$. More precisely, $\llbracket \underline{2} \rrbracket$ is the bundle over $\mathscr{M} \times \Spec(\nC[x,x'])$ whose fiber over $([X], a)$ is
+The proof $\underline{2}$ of the sequent ${!}(x \multimap x) \vdash x \multimap x$ has for its denotation a correspondence between $\llbracket {!}( x \multimap x ) \rrbracket$ and $\llbracket x \multimap x \rrbracket$, which concretely means that $\llbracket \underline{2} \rrbracket$ is a vector bundle over the scheme $\mathscr{M} \cong \mathscr{M} \times \Spec(\nC)$ whose fiber over a loop $X$, viewed as a point of $\mathscr{M}$, is the square $X \l X$. More precisely, $\llbracket \underline{2} \rrbracket$ is the bundle over $\mathscr{M} \times \Spec(\nC[x,x'])$ whose fiber over $(X, a)$ is the finite-dimensional Clifford representation
 \be\label{eq:bundledifferentialcliffordproof}
-\llbracket \underline{2} \rrbracket_{[X],a} = \left( X \l X \right) \otimes_{\nC[x,x']} \nC(a)\,.
+\llbracket \underline{2} \rrbracket_{X,a} = \left( X \l X \right) \otimes_{\nC[x,x']} \nC(a)
 \ee
+where applying $- \otimes_{\nC[x,x']} \nC(a)$ means that if $a = (a_1,a_2) \in \Spec(\nC[x,x'])$ we substitute the scalar values $x = a_1$ and $x' = a_2$ into the polynomials defining $X \l X$.
+
 For these definitions to work, the coefficients of the monomials in the matrix factorisation $X \l X$ need to be given explicitly as polynomial functions of the coefficients in $X$. This means we have to use $\L$ rather than $\LG$.
 
 \medskip
 
-\emph{Acknowledgements.} Thanks to Nils Carqueville for helpful comments on the draft, and to Ingo Runkel and Rafal Suszek for kindly allowing the use of Figure \ref{fig:wsh-defect} from \cite{runkel}. %Although the sequel on linear logic is the proper place to fully acknowledge the debt, we cannot neglect to mention the important role that the beautiful ideas in Girard's geometry of interaction program \cite{girard_towards} had in shaping the present work.
+\emph{Acknowledgements.} Thanks to Nils Carqueville for helpful comments on the draft.%, and to Ingo Runkel and Rafal Suszek for kindly allowing the use of Figure \ref{fig:wsh-defect} from \cite{runkel}. %Although the sequel on linear logic is the proper place to fully acknowledge the debt, we cannot neglect to mention the important role that the beautiful ideas in Girard's geometry of interaction program \cite{girard_towards} had in shaping the present work.
 
 \section{Background}\label{section:background}
 
@@ -453,7 +488,7 @@ Usually we write simply $\theta_i$ for the operator $\theta_i \wedge (-)$ and $\
 
 \begin{lemma}\label{defn:spinorrep} The map $C_n \lto \End_k(S_n)$ defined by
 \[
-\ferm_i \mapsto \theta_i \wedge (-), \qquad \fermc_i \mapsto \theta_i^*\, \lrcorner\, (-)
+\fermc_i \mapsto \theta_i \wedge (-), \qquad \ferm_i \mapsto \theta_i^*\, \lrcorner\, (-)
 \]
 is an isomorphism of $\mathbb{Z}_2$-graded $k$-algebras.
 \end{lemma}
@@ -481,7 +516,7 @@ S_{l,m} \otimes_{C_m} S_{m,n} = S_l \otimes_k S_m^* \otimes_{C_m} S_m \otimes_k 
 
 \begin{definition}\label{defn:idempotent_e} For $n \ge 0$ let $e_n \in C_n$ denote the element
 \[
-e_n = \fermc_1 \cdots \fermc_n \ferm_n \cdots \ferm_1\,.
+e_n = \ferm_1 \cdots \ferm_n \fermc_n \cdots \fermc_1\,.
 \]
 This is the idempotent corresponding to the summand $k \cdot 1$ of $S_n$.
 \end{definition}
@@ -567,8 +602,8 @@ There is a canonical functor $p: \cat{T}^\bullet \lto \mathbb{N}$ defined by $p(
 
 \begin{definition} Let $\cat{T}^{\star}$ be the category with the same objects as $\cat{T}^\bullet$ and
 \begin{align*}
-\cat{T}^{\star}( (X,n), (Y,m) ) &= \Big\{ \alpha \in \cat{T}(X,Y) \l \alpha \ferm_i = 0 \text{ for } 1 \le i \le n \text{ and }\\
-&\qquad \qquad\qquad \qquad \;\; \fermc_i \alpha = 0 \text{ for } 1 \le i \le m \Big\}\,.
+\cat{T}^{\star}( (X,n), (Y,m) ) &= \Big\{ \alpha \in \cat{T}(X,Y) \l \alpha \fermc_i = 0 \text{ for } 1 \le i \le n \text{ and }\\
+&\qquad \qquad\qquad \qquad \;\; \ferm_i \alpha = 0 \text{ for } 1 \le i \le m \Big\}\,.
 \end{align*}
 Composition is as in $\cat{T}$, but the identity on $(X,n)$ in $\cat{T}^\star$ is the morphism
 \[
@@ -585,11 +620,11 @@ where $e_n$ is the action on $X$ of the canonical idempotent from Definition \re
 \begin{proof}
 To prove that $\cat{T}^{\star}$ is a category it only needs to be checked that $1^*_{(X,n)}$ really acts as an identity. Let $\alpha: X \lto Y$ be a morphism in $\cat{T}^{\star}$ and consider
 \begin{align*}
-\alpha e_n &= \alpha \fermc_1 \cdots \fermc_n \ferm_n \cdots \ferm_1\\
-&= \alpha \left( \fermc_1 \cdots \fermc_{n-1} \ferm_{n-1} \cdots \ferm_1 - \fermc_1 \cdots \ferm_n \fermc_n \cdots \ferm_1 \right)\\
-&= \alpha \fermc_1 \cdots \fermc_{n-1} \ferm_{n-1} \cdots \ferm_1
+\alpha e_n &= \alpha \ferm_1 \cdots \ferm_n \fermc_n \cdots \fermc_1\\
+&= \alpha \left( \ferm_1 \cdots \ferm_{n-1} \fermc_{n-1} \cdots \fermc_1 - \ferm_1 \cdots \fermc_n \ferm_n \cdots \fermc_1 \right)\\
+&= \alpha \ferm_1 \cdots \ferm_{n-1} \fermc_{n-1} \cdots \fermc_1
 \end{align*}
-since in the second summand within the brackets, there is nothing to stop $\ferm_n$ from commuting to the left and annihilating with $\alpha$. Proceeding inductively, we see that $\alpha e_n = \alpha$. The proof that $e_n \alpha = \alpha$ is similar.
+since in the second summand within the brackets, there is nothing to stop $\fermc_n$ from commuting to the left and annihilating with $\alpha$. Proceeding inductively, we see that $\alpha e_n = \alpha$. The proof that $e_n \alpha = \alpha$ is similar.
 
 The functor $\Theta$ is defined to be the identity on objects, and given $\beta: (X,n) \lto (Y,m)$ in $\cat{T}^{\bullet}$ which is a morphism $\beta: S_{m,n} \otimes_{C_n} X \lto Y$ in $\cat{T}$ we define
 \begin{gather*}
@@ -621,7 +656,7 @@ S_n^* \otimes_{C_n} X \cong V\,, \qquad S_n \otimes_k V \cong X\,.
 \begin{proof}
 The map $f_0$ is a morphism $(X,n) \lto (V,0)$ in $\cat{T}^{\star}$ since
 \[
-f_0 \ferm_i = f_0 e_n \ferm_i = f_0 \fermc_1 \cdots \fermc_n \ferm_n \cdots \ferm_1 \ferm_i = 0\,.
+f_0 \fermc_i = f_0 e_n \fermc_i = f_0 \ferm_1 \cdots \ferm_n \fermc_n \cdots \fermc_1 \fermc_i = 0\,.
 \]
 Similarly $g_0$ defines a morphism $(V,0) \lto (X,n)$. Let $f,g$ be the morphisms in $\cat{T}^\bullet$ corresponding to $f_0,g_0$ under the equivalence of Lemma \ref{lemma:equivcliffordthick}. To prove that $fg = 1_{(X,n)}$ and $gf = 1_{(V,0)}$ in $\cat{T}^{\bullet}$ it suffices to prove that $f_0 g_0 = 1^*_{(X,n)} = e_n$ and $g_0 f_0 = 1^*_{(V,0)}$ in $\cat{T}^{\star}$. But this is true by definition.
 \end{proof}
@@ -677,14 +712,13 @@ In this section we define a superbicategory without units $\L$. Later we will pr
 where $(-)^\omega$ denotes the idempotent completion (see Remark \ref{remark:idempotent_completion}) and $(-)^{\bullet}$ is the Clifford thickening (see Section \ref{section:cliff_thick}).
 \end{definition}
 
-Thus a $1$-morphism $W \lto V$ in $\L$ is a finite rank matrix factorisation $X$ of $V(y) - W(x)$ together with an idempotent endomorphism $e$ and a family of odd operators $\ferm_i, \fermc_i$ satisfying Clifford relations and the equations (all up to homotopy)
+Thus a $1$-morphism $W \lto V$ in $\L$ is a finite rank matrix factorisation of $V(y) - W(x)$ together with an idempotent endomorphism $e$ and a family of odd operators $\ferm_i, \fermc_i$ satisfying Clifford relations and the equations (all up to homotopy)
 \begin{gather*}
-\ferm_i e = \ferm_i = e \ferm_i\,, \\
-\fermc_i e = \fermc_i = e \fermc_i\,.
+\ferm_i e = \ferm_i = e \ferm_i\,, \qquad \fermc_i e = \fermc_i = e \fermc_i\,.
 \end{gather*}
-Most of the time we only care about $1$-morphisms where $e = 1$, and let us only describe $2$-morphisms in this case. For matrix factorisations $X,Y$ of $V(y) - W(x)$ with respective Clifford actions $\{ \ferm_i, \fermc_i \}_{i=1}^a$ and $\{ \rho_j, \rho_j^\dagger \}_{j=1}^b$ the $2$-morphisms $\phi: (X,a) \lto (Y,b)$ in $\L$ are by Lemma \ref{lemma:equivcliffordthick} in bijection with morphisms of matrix factorisations $\phi: X \lto Y$ satisfying
+For matrix factorisations $X,Y$ of $V(y) - W(x)$ with respective Clifford actions $\{ \ferm_i, \fermc_i \}_{i=1}^a$ and $\{ \rho_j, \rho_j^\dagger \}_{j=1}^b$ the $2$-morphisms $\phi: (X,a) \lto (Y,b)$ in $\L$ are by Lemma \ref{lemma:equivcliffordthick} in bijection with morphisms of matrix factorisations $\phi: X \lto Y$ satisfying
 \[
-\phi \ferm_i = 0\,, \qquad \rho_j^\dagger \phi = 0\,, \qquad 1 \le i \le a, \quad 1 \le j \le b\,.
+\phi \fermc_i = 0\,, \qquad \rho_j \phi = 0\,, \qquad 1 \le i \le a, \quad 1 \le j \le b\,.
 \]
 Observe that the homotopy category $\LG(W,V)_{fin}$ of finite rank matrix factorisations sits fully faithfully inside $\L(W,V)$ as the subcategory where all idempotents are identities and there are no Clifford actions, and by Lemma \ref{lemma:embedcliffordthick} the inclusion of this subcategory into $\L(W,V)$ is an idempotent completion.
 
@@ -788,7 +822,7 @@ The other ingredient in defining the Clifford action are the partial derivatives
 
 \begin{definition}\label{defn:cliffordaction_cut} On $Y \l X$ we define odd $k[x,z]$-linear closed operators
 \begin{equation}\label{eq:intro_clifford_act1}
-\fermc_i = \At_i\,, \qquad \ferm_i = - \partial_{y_i}(d_X) - \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}\,.
+\ferm_i = \At_i\,, \qquad \fermc_i = - \partial_{y_i}(d_X) - \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}\,.
 \end{equation}
 \end{definition}
 
@@ -810,7 +844,7 @@ By the graded Jacobi identity
 &= - [\partial_{t_j}, [\At_i, d]] - [d, [\partial_{t_j}, \At_i]]\\
 &= [d, -[\partial_{t_j}, \At_i]]\,.
 \end{align*}
-Hence $[\fermc_i, \fermc_j] = [d, h_{ij}]$ where $h_{ij} = - [ \partial_{t_j}, \At_i ]$. Next we compute
+Hence $[\ferm_i, \ferm_j] = [d, h_{ij}]$ where $h_{ij} = - [ \partial_{t_j}, \At_i ]$. Next we compute
 \begin{align*}
 [\partial_{y_i}(d_X), \At_j] &= [\partial_{y_i}(d_X), [d, \partial_{t_j}]]\\
 &= -[\partial_{t_j}, [\partial_{y_i}(d_X), d]] + [d, [\partial_{t_j}, \partial_{y_i}(d_X)]]\\
@@ -819,14 +853,14 @@ Hence $[\fermc_i, \fermc_j] = [d, h_{ij}]$ where $h_{ij} = - [ \partial_{t_j}, \
 \end{align*}
 Again we set $g_{ij} = [\partial_{t_j}, \partial_{y_i}(d_X)]$ for later use. We compute that
 \begin{align*}
-[ \ferm_i, \fermc_j] &= \big[- \partial_{y_i}(d_X) - \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}, \At_j \big]\\
+[ \fermc_i, \ferm_j] &= \big[- \partial_{y_i}(d_X) - \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}, \At_j \big]\\
 &= \delta_{ij} - [d, g_{ij}] - \frac{1}{2} \sum_q \partial_{y_qy_i}(V) [ \At_q, \At_j]\\
 &= \delta_{ij} - [d, g_{ij}] - \frac{1}{2} \sum_q \partial_{y_qy_i}(V) [d, h_{qj}]\\
 &= \delta_{ij} + \big[d, -g_{ij} - \frac{1}{2} \sum_q \partial_{y_qy_i}(V) h_{qj}\big]\,.
 \end{align*}
 Finally, using Lemma \ref{lemma:commutator_of_lambdas}
 \begin{align*}
-[ \ferm_i, \ferm_j ] &= \Big[ \partial_{y_i}(d_X) + \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}\; , \; \partial_{y_j}(d_X) + \frac{1}{2} \sum_q \partial_{y_q y_j}(V) \At_{q} \Big]\\
+[ \fermc_i, \fermc_j ] &= \Big[ \partial_{y_i}(d_X) + \frac{1}{2} \sum_q \partial_{y_q y_i}(V) \At_{q}\; , \; \partial_{y_j}(d_X) + \frac{1}{2} \sum_q \partial_{y_q y_j}(V) \At_{q} \Big]\\
 &= [ \partial_{y_i}(d_X), \partial_{y_j}(d_X) ] + \frac{1}{2}\sum_q \partial_{y_qy_j}(V) \big[ \partial_{y_i}(d_X), \At_q \big]\\
 &\quad + \frac{1}{2}\sum_q \partial_{y_q y_i}(V) \big[ \At_q, \partial_{y_j}(d_X) \big]\\
 &\quad + \frac{1}{4}\sum_{p,q} \partial_{y_py_i}(V) \partial_{y_qy_j}(V) \big[ \At_p, \At_q \big]\\
@@ -907,7 +941,7 @@ We prove the $C_p$-linearity of $\alpha$, the proof for $C_m$ is similar. The al
 \[
 M = Z \otimes_{k[y]} k\llbracket y \rrbracket \otimes_{k[y]} \big( Y \otimes_{k[z]} J_V \otimes_{k[z]} X \big)
 \]
-relative to the ring morphism $k[q,x] \lto k[q,x] [ \partial_{y_1} U, \ldots, \partial_{y_p} U ]$. Specifically, the generator $\fermc_i$ of $C_p$ is the commutator $[d_{M}, \partial_s]$ where $s = \partial_{y_i} U$. But this operator can be identified with an Atiyah class of the linear factorisation
+relative to the ring morphism $k[q,x] \lto k[q,x] [ \partial_{y_1} U, \ldots, \partial_{y_p} U ]$. Specifically, the generator $\ferm_i$ of $C_p$ is the commutator $[d_{M}, \partial_s]$ where $s = \partial_{y_i} U$. But this operator can be identified with an Atiyah class of the linear factorisation
 \begin{equation}\label{eq:assoc_proof_M}
 Z \otimes_{k[y]} k\llbracket y \rrbracket \otimes_{k[y]} \big( Y \otimes_{k[z]} k\llbracket z \rrbracket \otimes_{k[z]} X \big)
 \end{equation}
@@ -926,11 +960,11 @@ The only thing to check is the coherence of the associator, which is trivial.
 
 \begin{remark}\label{remark:relation_to_toby_paper} The cut system presented here refines earlier work in \cite{dm1102.2957}. To see the connection, recall the idempotent $e_m \in C_m$ of Definition \ref{defn:idempotent_e} which corresponds to projection onto lowest degree in $S_m$. The projector onto top degree $k \cdot \theta_1 \cdots \theta_m \subset S_m$ is 
 \[
-e_m' = \ferm_1 \cdots \ferm_m \fermc_m \cdots \fermc_1\,.
+e_m' = \fermc_1 \cdots \fermc_m \ferm_m \cdots \ferm_1\,.
 \]
-Observe that each of the $\ferm_i$'s acts as $- \lambda_i$ because all of the $\fermc_j$'s to the right. Hence
+Observe that each of the $\fermc_i$'s acts as $- \partial_{y_i}(d_X)$ because all of the $\ferm_j$'s to the right. Hence
 \begin{align*}
-e_m' &= (-1)^{\binom{m}{2}} \ferm_1 \cdots \ferm_m \fermc_1 \cdots \fermc_m \\
+e_m' &= (-1)^{\binom{m}{2}} \fermc_1 \cdots \fermc_m \ferm_1 \cdots \ferm_m \\
 &= (-1)^{\binom{m+1}{2}} \lambda_1 \cdots \lambda_m \At_1 \cdots \At_m\,.
 \end{align*}
 which is precisely the idempotent which appears in \cite[Corollary 10.4]{dm1102.2957}.
@@ -1532,11 +1566,11 @@ The canonical action of $C_m$ on the spinor representation $S_m$ by wedge produc
 
 \begin{proposition}\label{prop:clifford_action} The map $\Phi$ is an isomorphism of $C_m$- representations in the homotopy category. That is, there are homotopies for $1 \le i \le m$
 \[
-\ferm_i \Phi \simeq \Phi \theta_i \,, \qquad \fermc_i \Phi \simeq \Phi \theta_i^*\,.
+\fermc_i \Phi \simeq \Phi \theta_i \,, \qquad \ferm_i \Phi \simeq \Phi \theta_i^*\,.
 \]
 \end{proposition}
 \begin{proof}
-We prove that $\ferm_i \simeq \Phi \theta_i \Phi^{-1}$ and $\fermc_i \simeq \Phi \theta_i^* \Phi^{-1}$. With the diagram \eqref{eq:final_finite_model2} in mind, and following the terminology of Section \ref{section:cliffordactkos}, we define the transfers of $\theta_i, \theta_i^*$ from closed operators on $S_m \otimes_k ( Y \,\check{\otimes}\, X )$ to operators on the intermediate object $\check{K} \otimes_{k\llbracket y \rrbracket} Y \,\check{\otimes}\, X$ by
+We prove that $\fermc_i \simeq \Phi \theta_i \Phi^{-1}$ and $\ferm_i \simeq \Phi \theta_i^* \Phi^{-1}$. With the diagram \eqref{eq:final_finite_model2} in mind, and following the terminology of Section \ref{section:cliffordactkos}, we define the transfers of $\theta_i, \theta_i^*$ from closed operators on $S_m \otimes_k ( Y \,\check{\otimes}\, X )$ to operators on the intermediate object $\check{K} \otimes_{k\llbracket y \rrbracket} Y \,\check{\otimes}\, X$ by
 \[
 \cat{T}(\theta_i) = \exp(-\delta) \theta_i \exp(\delta)\,, \qquad \cat{T}(\theta_i^*) = \exp(-\delta) \theta_i^* \exp(\delta)\,.
 \]
@@ -1554,14 +1588,14 @@ It remains to compute the further transfer of these operators to $Y \l X$. The k
 \ee
 for any indices $q_1,\ldots,q_l$. Hence
 \[
-\Phi \theta_i^* \Phi^{-1} \simeq \pi \cat{T}(\theta_i^*) \sigma_\infty = \pi \theta_i^* \sigma_\infty \simeq \At_i = \fermc_i\,.
+\Phi \theta_i^* \Phi^{-1} \simeq \pi \cat{T}(\theta_i^*) \sigma_\infty = \pi \theta_i^* \sigma_\infty \simeq \At_i = \ferm_i\,.
 \]
 Since $\pi$ projects onto $\theta$-degree zero,
 \begin{align*}
 \Phi \theta_i \Phi^{-1} &\simeq \pi \cat{T}(\theta_i) \sigma_\infty\\
 &\simeq - \pi \lambda_i \sigma_\infty - \frac{1}{2} \sum_q \partial_{y_qy_i}(V) \pi \theta_q^* \sigma_\infty\\
 &\simeq - \lambda_i - \frac{1}{2}\sum_q \partial_{y_qy_i}(V) \At_q\\
-&= \ferm_i
+&= \fermc_i
 \end{align*}
 which completes the proof.
 \end{proof}
@@ -1688,7 +1722,7 @@ Y \l X \ar@<-1ex>[r]_-{\Phi^{-1}} & S_m \otimes_k ( Y \otimes X )\ar@<-1ex>[l]_-
 \end{equation}
 where $Y \l X$ is finite rank. Recall from Definition \ref{defn:idempotent_e} that the idempotent
 \[
-e_m = \fermc_1 \cdots \fermc_m \ferm_m \cdots \ferm_1 \in C_m
+e_m = \ferm_1 \cdots \ferm_m \fermc_m \cdots \fermc_1 \in C_m
 \]
 represents projection onto $k \cdot 1$ in $S_m$. Since \eqref{eq:final_finite_modelagain} is an isomorphism of $C_m$-representations the idempotent $e_m$ acting on $Y \l X$ must split to the same thing as the idempotent $e_m$ acting on the right hand side, which obviously splits to $Y \otimes X$. Put differently, there is a diagram in the homotopy category
 \[
@@ -1696,7 +1730,7 @@ represents projection onto $k \cdot 1$ in $S_m$. Since \eqref{eq:final_finite_mo
 Y \l X \ar@<1ex>[r]^-{f} & Y \otimes X \ar@<1ex>[l]^-{g}
 }
 \]
-where $g$ is the quotient map, and $f g = 1_{Y \otimes X}$ while $g f = e_m$.\footnote{$f$ is $\Phi^{-1}$ followed by projection onto $\theta$-degree zero. Not a very friendly map.} Then we may take as our definition
+where $g$ is the quotient map, and $f g = 1_{Y \otimes X}$ while $g f = e_m$.\footnote{$f$ is $\Phi^{-1}$ followed by projection onto $\theta$-degree zero.} Then we may take as our definition
 \[
 \cat{Z}( Y \otimes X ) = (Y \l X, e_m)\,.
 \]
@@ -1714,9 +1748,7 @@ But by Lemma \ref{lemma:whackamole} the identity map $\varphi_{Y,X} = 1_{Y \l X}
 
 \subsection{Example: the Hom complex}\label{example:computing_homs}
 
-Using the bicategory $\L$ we can study the complex $\Hom_R(Y,X)$ for two finite rank matrix factorisations $X,Y$ of a potential $V \in R = k[y_1,\ldots,y_m]$. In particular, we will explain how the homotopy relation on morphisms of matrix factorisations is effectively computable.
-
-The pair $(k,0)$ is an object in $\LG$ and we may view $X$ and the dual matrix factorisation $Y^{\vee}$ of $-V$ as a pair of $1$-morphisms
+Using the bicategory $\L$ we can study the complex $\Hom_R(Y,X)$ for two finite rank matrix factorisations $X,Y$ of a potential $V \in R = k[y_1,\ldots,y_m]$. The pair $(k,0)$ is an object in $\LG$ and we may view $X$ and the dual matrix factorisation $Y^{\vee}$ of $-V$ as a pair of $1$-morphisms
 \begin{equation}\label{eq:compute_hom_composition}
 \xymatrix@C+2pc{
 0 \ar[r]^-{X} & V \ar[r]^-{Y^{\vee}} & 0
@@ -1753,7 +1785,7 @@ y^{N-j} & -y^{N-i} & 0 & 0 \end{pmatrix}\,.
 \end{equation}
 Let us now compute the cut $Y^{\vee} \l X$, according to Definition \ref{defn:cliffordaction_cut}. With
 \be\label{eq:examplecut_basis2}
-J_V = k[y]/y^{N-1} = k \cdot 1 \oplus k \cdot y \oplus \cdots k \cdot y^{N-2}
+J_V = k[y]/y^{N-1} = k \cdot 1 \oplus k \cdot y \oplus \cdots \oplus k \cdot y^{N-2}
 \ee
 the matrix of multiplication by $y$ on $J_V$ is $[y] = \begin{pmatrix} 0 & 0\\ I_{N-2} & 0 \end{pmatrix}$. The differential on
 \be\label{eq:examplecut_basis}
@@ -1777,9 +1809,9 @@ The Atiyah class is the operator $\At = [d_{\Hom}, \partial_t] = d_{\Hom} \parti
 \begin{align*}
 \At( y^q \theta \theta^* ) &= - \partial_t d_{\Hom}( y^q \theta \theta^* ) = \partial_t( y^{i+q} ) \theta - \partial_t( y^{N-j+q} ) \theta^*\,.
 \end{align*}
-The matrix of the Atiyah class as an operator $\fermc$ on $Y^{\vee} \l X$ is therefore
+The matrix of the Atiyah class as an operator $\ferm$ on $Y^{\vee} \l X$ is therefore
 \begin{equation}\label{eq:aityah_class_hom_example}
-\fermc = \begin{pmatrix} 0 & 0 & -[R_{N-i}] & -[R_{j}] \\ 
+\ferm = \begin{pmatrix} 0 & 0 & -[R_{N-i}] & -[R_{j}] \\ 
 0 & 0 & -[R_{N-j}] & -[R_{i}] \\
 [R_i] & -[R_j] & 0 & 0 \\
 -[R_{N-j}] & [R_{N-i}] & 0 & 0 \end{pmatrix}\,.
@@ -1793,7 +1825,7 @@ Whereas the matrix of $\partial_{y}(d_X) = j y^{j-1} \theta + (N-j) y^{N-j-1} \t
 \]
 By definition
 \[
-\ferm = - \partial_y(d_X) - \frac{1}{2} N (N-1) y^{N-2} \fermc
+\fermc = - \partial_y(d_X) - \frac{1}{2} N (N-1) y^{N-2} \ferm
 \]
 which completes the description of the cut $( Y^{\vee} \l X, \{ \ferm, \fermc \} )$. %Splittng the idempotent $\gamma^\dagger \gamma$ on $Y^{\vee} \l X$ yields a finite model for $\Hom_R(Y,X)$.
 \end{example}
@@ -1929,18 +1961,18 @@ Now we specialise to the Clifford algebras $C_n$ and their modules.
 
 \begin{lemma}\label{lemma:simplehom} Let $X$ be a left $C_n$-module in $\cat{C}$. There is a $k$-linear isomorphism
 \[
-\Hom_{C_n}^0( S_n, X ) \cong \big\{ x \in X^0 \l \fermc_i \cdot x = 0 \text{ for all } 1 \le i \le n \big\}
+\Hom_{C_n}^0( S_n, X ) \cong \big\{ x \in X^0 \l \ferm_i \cdot x = 0 \text{ for all } 1 \le i \le n \big\}
 \]
 defined by $f \mapsto f(1)$. If $X$ is a right $C_n$-module there is a $k$-linear isomorphism
 \[
-\Hom^0_{C_n}( (S_n)^*, X ) \cong \big\{ x \in X^0 \l x \cdot \ferm_i = 0 \text{ for all } 1 \le i \le n \big\}
+\Hom^0_{C_n}( (S_n)^*, X ) \cong \big\{ x \in X^0 \l x \cdot \fermc_i = 0 \text{ for all } 1 \le i \le n \big\}
 \]
 defined by $f \mapsto f(1^*)$.
 \end{lemma}
 
 \begin{lemma}\label{lemma:morphism_out_1} For an $C_n$-module $Y$ there is a $k$-linear isomorphism
 \[
-\cat{C}_{C_n}( S_n \otimes_k X, Y ) \cong \{ \delta \in \cat{C}(X,Y) \l \fermc_i \circ \delta = 0 \text{ for all } 1 \le i \le n \}
+\cat{C}_{C_n}( S_n \otimes_k X, Y ) \cong \{ \delta \in \cat{C}(X,Y) \l \ferm_i \circ \delta = 0 \text{ for all } 1 \le i \le n \}
 \]
 defined by sending $\alpha: S_n \otimes_k X \lto Y$ to the composite
 \[
@@ -1961,7 +1993,7 @@ More generally
 
 \begin{lemma}\label{lemma:morphisms_two_forms} Let $X \in C_{C_p}$ and $Y \in \cat{C}_{C_q}$. There is a $k$-linear isomorphism
 \begin{align*}
-\cat{C}_{C_q}( S_{q,p} \otimes_{C_p} X, Y ) \cong \{ \delta: X \lto Y \l \delta \circ \ferm_i &= 0 \text{ for } 1 \le i \le p \text{ and }\\ \fermc_i \circ \delta &= 0 \text{ for } 1 \le i \le q \}
+\cat{C}_{C_q}( S_{q,p} \otimes_{C_p} X, Y ) \cong \{ \delta: X \lto Y \l \delta \circ \fermc_i &= 0 \text{ for } 1 \le i \le p \text{ and }\\ \ferm_i \circ \delta &= 0 \text{ for } 1 \le i \le q \}
 \end{align*}
 defined by sending $\alpha: S_{q,p} \otimes_{C_p} X \lto Y$ to the composite
 \[
@@ -1976,8 +2008,8 @@ Using the previous lemma and Lemma \ref{lemma:simplehom},
 \begin{align*}
 \cat{C}_{C_q}( S_{q,p} \otimes_{C_p} X, Y ) &\cong \Hom^0_{C_p-C_q-\operatorname{bimod}}( S_{q} \otimes_k S_p^* , \cat{C}^*(X,Y))\\
 &\cong \Hom^0_{C_q}( S_q, \Hom^*_{C_p}( S_p^*, \cat{C}^*(X,Y) ))\\
-&\cong \{ \delta \in \Hom^0_{C_q}( S_p^*, \cat{C}^*(X,Y) ) \l \fermc_i \circ \delta = 0 \text{ for } 1 \le i \le q \}\\
-&\cong \{ \delta: X \lto Y \l \delta \circ \ferm_i = 0 \text{ for } 1 \le i \le p \text{ and } \fermc_i \circ \delta = 0 \text{ for } 1 \le i \le q \}
+&\cong \{ \delta \in \Hom^0_{C_q}( S_p^*, \cat{C}^*(X,Y) ) \l \ferm_i \circ \delta = 0 \text{ for } 1 \le i \le q \}\\
+&\cong \{ \delta: X \lto Y \l \delta \circ \fermc_i = 0 \text{ for } 1 \le i \le p \text{ and } \ferm_i \circ \delta = 0 \text{ for } 1 \le i \le q \}
 \end{align*}
 as claimed.
 \end{proof}
@@ -2071,7 +2103,7 @@ New York Journal of Mathematics \textbf{16} (2010), 61--98,
 N.~Carqueville and D.~Murfet, \textsl{Computing {K}hovanov-{R}ozansky homology and defect fusion}, Algebraic \& Geometric Topology \textbf{14} (2014), 489--537, \href{http://arxiv.org/abs/1108.1081}{[arXiv:1108.1081]}. 
 
 \bibitem{lgdual}
-N.~Carqueville and D.~Murfet, \textsl{Adjunctions and defects in {L}andau-{G}inzburg models}, \href{http://arxiv.org/abs/1208.1481}{[arXiv:1208.1481]}.
+N.~Carqueville and D.~Murfet, \textsl{Adjunctions and defects in {L}andau-{G}inzburg models}, Adv. Math. \textbf{289} (2016), 480--566, \href{http://arxiv.org/abs/1208.1481}{[arXiv:1208.1481]}.
 
 \bibitem{lgdual_survey}
 N.~Carqueville and D.~Murfet, \textsl{A toolkit for defect computations in Landau-Ginzburg models}, \href{http://arxiv.org/abs/1303.1389}{[arXiv:1303.1389]}, contribution to the String-Math 2012 proceedings.
@@ -2113,8 +2145,8 @@ T.~Friedrich, \textsl{{D}irac operations in {R}iemannian geometry}, Graduate stu
 \bibitem{gray}
 J.~W.~Gray, \textsl{Formal category theory: adjointness for 2-categories}, Springer, Berlin, 1974.
 
-%\bibitem{girard_llogic}
-%J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1) (1987), 1--102.
+\bibitem{girard_llogic}
+J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1) (1987), 1--102.
 
 \bibitem{kang}
 S.-J.~Kang, M.~Kashiwara and S.-J.~Oh, \textsl{Supercategorification of quantum Kac-Moody algebras}, Adv. Math \textbf{242} (2013) 116--162, \href{http://arxiv.org/abs/1206.5933}{[arXiv:1206.5933]}.
