@@ -113,7 +113,7 @@ The bicategory $\LG$ of Landau-Ginzburg models has polynomials as objects and ma
 
 The bicategory $\LG$ of Landau-Ginzburg models has a rich structure, attested to by the existence of adjoints and pivotality \cite{lgdual}, its role in recent important results in topological field theory \cite{genorb,ade} and the theory of homological knot invariants \cite{kr0401268}. This is remarkable in light of the fact that $1$-morphisms are very simple objects, namely, matrices of polynomials which satisfy an equation. This makes $\LG$ an attractive object of study, but for one major wrinkle: the composition operation for $1$-morphisms is infinitary.
 
-The objects of $\LG$ are potentials $W(x)$, while $1$-morphisms $W(x) \lto V(y)$ are matrix factorisations of the difference $V(y) - W(x)$ over $\nC[x,y]$. Such a matrix factorisation is a $\nZ_2$-graded free $\nC[x,y]$-module $X = X^0 \oplus X^1$ together with an odd operator $d_X$ satisfying $d_X^2 = (V(y) - W(x)) \cdot 1_X$. For a third potential $U(z)$, composition is a functor
+The objects of $\LG$ are a class of polynomials $W(x)$ called potentials, and $1$-morphisms $W(x) \lto V(y)$ are matrix factorisations of the difference $V(y) - W(x)$ over $\nC[x,y]$. Such a matrix factorisation is a $\nZ_2$-graded free $\nC[x,y]$-module $X = X^0 \oplus X^1$ together with an odd operator $d_X$ satisfying $d_X^2 = (V(y) - W(x)) \cdot 1_X$. These $1$-morphisms form a category denoted $\LG(W,V)$. For a third potential $U(z)$, composition is a functor
 \begin{gather*}
 \LG(V,U) \times \LG(W,V) \lto \LG(W,U)\,,\\
 (Y , X) \mapsto Y \circ X
@@ -125,9 +125,7 @@ Y \circ X = \big( Y \otimes_{\nC[y]} X, d_Y \otimes 1 + 1 \otimes d_X \big)\,.
 \ee
 This is the analogue of convolution of Fourier-Mukai kernels in the matrix factorisation setting and suffers from the same defect, namely, the resulting matrix factorisation $Y \circ X$ is a free module of \emph{infinite rank} over $\nC[x,z]$, which is only homotopy equivalent to a finite rank matrix factorisation. While this finite model can be proven abstractly to exist, there is no obvious way to describe it as a function of the input data $Y,X$. This means that we are stuck with infinite rank matrix factorisations in the theory.
 
-Together with Dyckerhoff we initiated in \cite{dm1102.2957} the study of these finite models in terms of homological perturbation and Atiyah classes, and in the present paper this program reaches its logical conclusion. We introduce a bicategory $\L$ in which the objects are again potentials and the $1$-morphisms $W \lto V$ are finite rank matrix factorisations of $V - W$ additionally equipped with the structure of a representation of a Clifford algebra. We will prove that this bicategory is equivalent to $\LG$, but it is much simpler: the composition operation is described by a finite number of polynomial functions of the input data.
-
-More precisely, the composition of $1$-morphisms in $\L$ is a functor
+Together with Dyckerhoff we initiated in \cite{dm1102.2957} the study of these finite models in terms of homological perturbation and Atiyah classes, and in the present paper this program reaches its logical conclusion. We introduce a bicategory $\L$ in which the objects are again potentials and the $1$-morphisms $W \lto V$ are finite rank matrix factorisations of $V - W$ additionally equipped with the structure of a representation of a Clifford algebra. This bicategory is equivalent to $\LG$, but it is simpler: the composition operation is described by a finite number of polynomial functions of the input data. More precisely, the composition of $1$-morphisms in $\L$ is a functor
 \begin{gather}
 \L(V,U) \times \L(W,V) \lto \L(W,U)\,,\label{eq:cut_functor_intro}\\
 (Y,X) \mapsto Y \l X
@@ -167,7 +165,7 @@ The paper is structured as follows: in Section \ref{section:background} we recal
 As a special case of the deformation retract \eqref{eq:final_finite_model_intro} we obtain in Section \ref{example:computing_homs} for any potential $V(y)$ and matrix factorisations $X,X'$ of $V$ a deformation retract of $\nZ_2$-graded complexes of vector spaces
 \begin{equation}\label{eq:final_finite_model_hom}
 \xymatrix@C+4pc{
-(X')^{\vee} \l X \ar@<-1ex>[r]_-{\Phi^{-1}} & S_m \otimes_k \Hom_{\nC[y]}(X', X) \ar@<-1ex>[l]_-{\Phi}
+(X')^{\vee} \l X \ar@<-1ex>[r]_-{\Phi^{-1}} & S_m \otimes_{\nC} \Hom_{\nC[y]}(X', X) \ar@<-1ex>[l]_-{\Phi}
 }
 \end{equation}
 where $\Hom_{\nC[y]}(X',X)$ denotes the Hom-complex. Observe that this is infinite-dimensional (with finite-dimensional cohomology) while $(X')^{\vee} \l X$ is finite-dimensional.
@@ -182,7 +180,7 @@ Given potentials $W(x), V(y)$, a matrix factorisation of $V(y) - W(x)$ is after 
 \be\label{eq:intro_capitalD}
 D \in M_{2r}( \nC[x,y] ) \qquad \text{ satisfying } \qquad D^2 = (V(y) - W(x)) \cdot I_{2r}
 \ee
-where we require that, dividing $D$ into $r \times r$ blocks, the upper left and bottom right blocks are zero matrices. If we fix the size $r$ of the blocks and bound the degrees of the monomials appearing in $D$ by some integer $k$, we can parametrise matrix factorisations by the closed points of an affine scheme whose coordinates are the coefficients of the various monomials in each row and column of $D$. 
+where we require that, dividing $D$ into $r \times r$ blocks, the upper left and bottom right blocks are zero matrices. If we fix the size $r$ of the blocks and bound the degrees of the monomials appearing in $D$ by some integer $k$, we can parametrise matrix factorisations by the $\nC$-points of an affine scheme whose coordinates are the coefficients of the various monomials in each row and column of $D$. 
 
 We may add further coordinates and equations to encode closed odd operators satisfying Clifford relations \eqref{eq:clifford_relations_intro} and, in this way, for a choice of parameters $\lambda = (r, k, \ldots)$ define a scheme $\mathscr{M}_{\lambda}(W,V)$ such that as sets
 \begin{equation}\label{eq:param_frmf}
@@ -192,14 +190,14 @@ where $Z_{\nC}$ denotes the $\nC$-points of a scheme $Z$. The cut operation is a
 \be\label{eq:enrichment_morphisms_intro}
 \mathscr{M}_\mu(V,U) \times \mathscr{M}_\lambda(W,V) \lto \mathscr{M}_{f(\lambda, \mu)}(W, U)
 \ee
-lifting the functor \eqref{eq:cut_functor_intro} on the level of objects for some function $f(\lambda, \mu)$ of indices. Finally, using the approach of Section \ref{example:computing_homs}, we can define a bundle of Clifford representations
+lifting the functor \eqref{eq:cut_functor_intro} on the level of objects for some function $f(\lambda, \mu)$ of indices. Finally, using the approach of Section \ref{example:computing_homs}, we can define for each pair of potentials $W,V$ and tuple of parameters $\lambda$ a bundle of Clifford representations
 \be\label{eq:enrichment_intro_bundles}
 \xymatrix{
-\mathscr{H}\! om_{W,V} \ar[d]\\
-\mathscr{M}_\lambda(W,V) \times \mathscr{M}_\lambda(W,V)
+\mathscr{H}\! om_{W,V,\lambda} \ar[d]\\
+\mathscr{M}_\lambda(W,V) \times \mathscr{M}_\lambda(W,V)\,.
 }
 \ee
-which for two finite-rank matrix factorisations $X,X'$ of $V - W$ has for its fiber over the point $(X',X)$ the finite-dimensional Clifford representation $(X')^{\vee} \l X$ as in \eqref{eq:final_finite_model_hom}, which is isomorphic to the Hom-complex $\Hom_{\nC[x,y]}(X',X)$ tensored with a suitable spinor representation. The cut system which enriches $\cat{C}$ consists of the family of schemes $\mathscr{M}_\lambda(W,V)$, the composition morphisms \eqref{eq:enrichment_morphisms_intro}, the bundles \eqref{eq:enrichment_intro_bundles}, and various other data satisfying natural constraints which encode the structure of the bicategory.
+Given two finite-rank matrix factorisations $X,X'$ of $V - W$ the fiber of this vector bundle over the point $(X',X)$ is the Clifford representation $(X')^{\vee} \l X$ of \eqref{eq:final_finite_model_hom}, which is isomorphic to the Hom-complex $\Hom_{\nC[x,y]}(X',X)$ tensored with a suitable spinor representation. The cut system which enriches $\cat{C}$ consists of the family of schemes $\mathscr{M}_\lambda(W,V)$, the composition morphisms \eqref{eq:enrichment_morphisms_intro}, the bundles \eqref{eq:enrichment_intro_bundles}, and various other data satisfying natural constraints which encode the structure of the bicategory.
 
 % The set of finite rank matrix factorisations is denoted $\LG(W,V)_{fin}$. 
 %For technical reasons the category of $1$-morphisms $\LG(W,V)$ contains, in addition to the finite rank matrix factorisations, those infinite rank matrix factorisations which are homotopy equivalent to finite rank ones; this means in particular that the inclusion
@@ -235,13 +233,7 @@ Let $x$ be a variable of the logic and suppose it has denotation $\llbracket x \
 \llbracket x \multimap x \rrbracket = \big(\Spec(\nC), \nC[x,x'], W(x) - W(x') \big)\,,\\
 \llbracket {!}( x \multimap x ) \rrbracket = \big( \mathscr{M}, \nC, 0 \big)\,.
 \end{gather*}
-The proof $\underline{2}$ of the sequent ${!}(x \multimap x) \vdash x \multimap x$ has for its denotation a correspondence between $\llbracket {!}( x \multimap x ) \rrbracket$ and $\llbracket x \multimap x \rrbracket$, which concretely means that $\llbracket \underline{2} \rrbracket$ is a vector bundle over the scheme $\mathscr{M} \cong \mathscr{M} \times \Spec(\nC)$ whose fiber over a loop $X$, viewed as a point of $\mathscr{M}$, is the square $X \l X$. More precisely, $\llbracket \underline{2} \rrbracket$ is the bundle over $\mathscr{M} \times \Spec(\nC[x,x'])$ whose fiber over $(X, a)$ is the finite-dimensional Clifford representation
-\be\label{eq:bundledifferentialcliffordproof}
-\llbracket \underline{2} \rrbracket_{X,a} = \left( X \l X \right) \otimes_{\nC[x,x']} \nC(a)
-\ee
-where applying $- \otimes_{\nC[x,x']} \nC(a)$ means that if $a = (a_1,a_2) \in \Spec(\nC[x,x'])$ we substitute the scalar values $x = a_1$ and $x' = a_2$ into the polynomials defining $X \l X$.
-
-For these definitions to work, the coefficients of the monomials in the matrix factorisation $X \l X$ need to be given explicitly as polynomial functions of the coefficients in $X$. This means we have to use $\L$ rather than $\LG$.
+A proof of the sequent ${!}(x \multimap x) \vdash x \multimap x$ has for its denotation a correspondence between $\llbracket {!}( x \multimap x ) \rrbracket$ and $\llbracket x \multimap x \rrbracket$, which is a matrix factorisation of $W(x) - W(x')$ over the scheme $\mathscr{M} \times \Spec(\nC[x,x'])$. For example, the Church numeral $\underline{2}$ has for its denotation the matrix factorisation whose fiber over a loop $X: W \lto W$, viewed as a point of $\mathscr{M}$, is the square $X \l X$ as a matrix factorisation of $W(x) - W(x')$ over $\Spec(\nC[x,x'])$. For these definitions to work, the coefficients of the monomials in the matrix factorisation $X \l X$ need to be given explicitly as polynomial functions of the coefficients in $X$. This means we have to use $\L$ rather than $\LG$.
 
 \medskip
 
@@ -1468,7 +1460,7 @@ We proceed to rediscover $Y \l X$ with its Clifford action as a finite model of 
 S_m = \bigwedge\left( k \theta_1 \oplus \cdots \oplus k \theta_m \right)\,.
 \]
 The Koszul complex $K$ of the sequence $t_1,\ldots,t_m$ (where $t_i = \partial_{y_i} V$) is defined by
-\begin{equation}\label{defn:koszul}
+\begin{equation}\label{defn:koszul2}
 K = S_m \otimes_k k[y], \qquad d_K = \sum_{i=1}^m t_i \theta_i^*\,.
 \end{equation}
 According to Strategy \ref{strategy} the first step is to find a finite model of
@@ -2020,7 +2012,7 @@ This appendix collects the data needed for constructing a superbicategory $\cat{
 \[
 T: \cat{B}(a, b) \otimes_k \cat{B}(b,c) \lto \cat{B}(a,c)\,.
 \]
-We assume this is a superfunctor, i.e. that \eqref{eq:psicomp1}-\eqref{eq:psicomp3} commute. Since our main example is constructing the superbicategory associated to a cut system, we write $T(X,Y)$ as $Y \l X$. We denote the associator by $\alpha$, the units in $\cat{B}$ by $\Delta_a: a \lto a$, and the unitors for $X: a \lto b$ by $\lambda_X: \Delta_b \l X \lto X$ and $\rho_X: X \l \Delta_a \lto X$.
+Since our main example is constructing the superbicategory associated to a cut system, we write $T(X,Y)$ as $Y \l X$. We denote the associator by $\alpha$, the units in $\cat{B}$ by $\Delta_a: a \lto a$, and the unitors for $X: a \lto b$ by $\lambda_X: \Delta_b \l X \lto X$ and $\rho_X: X \l \Delta_a \lto X$.
 
 Suppose that for all objects $a,b,c$ we are given natural isomorphisms
 \begin{align*}
@@ -2063,10 +2055,29 @@ whose commutativity expresses compatibility of the functors $\Psi$ with the unit
 \Psi( (Z \l Y) \l X ) \ar[rr]_-{\alpha} & & \Psi( Z \l ( Y \l X ) )
 }\label{eq:psilastdia}
 \end{gather}
-expresses compatibility of $\Psi$ with the associator of $\cat{B}$.
+expresses compatibility of $\Psi$ with the associator of $\cat{B}$. Finally, commutativity of
+\begin{equation}\label{eq:psicomp1}
+\xymatrix@R+1pc@C+1pc{
+T( 1 \otimes \Psi^2 ) \ar[r]^-{\tau}\ar[d]_-{T(1 \otimes \xi)} & \Psi T( 1 \otimes \Psi ) \ar[r]^-{\tau} & \Psi^2 T \ar[d]^-{\xi * 1_T}\\
+T \ar[rr]_-{1_T} & & T
+}
+\end{equation}
+\begin{equation}\label{eq:psicomp2}
+\xymatrix@R+1pc@C+1pc{
+T( \Psi^2 \otimes 1 ) \ar[r]^-{\tau} \ar[d]_-{T (\psi \otimes 1)}  & \Psi T( \Psi \otimes 1 ) \ar[r]^-{\tau} & \Psi^2 T \ar[d]^-{\xi * 1_T}\\
+T \ar[rr]_-{1_T} & & T
+}
+\end{equation}
+\begin{equation}\label{eq:psicomp3}
+\xymatrix@R+1pc@C+1pc{
+T( \Psi \otimes \Psi ) \ar[r]^-{\tau}\ar[d]_-{-\tau} & \Psi T( 1 \otimes \Psi ) \ar[d]^-{\tau}\\
+\Psi T( \Psi \otimes 1 ) \ar[r]_-{\tau} & \Psi^2 T
+}
+\end{equation}
+expresses that $T$ is a superfunctor.
 
 \begin{lemma}\label{lemma:constructingsuper}
-Given a bicategory $\cat{B}$ with the structure of a supercategory on $\cat{B}(a,b)$ for all pairs $a,b$, and natural isomorphisms $\tau$, suppose that \eqref{eq:psiunitor1}-\eqref{eq:psilastdia} commute. Then with $\Psi, \xi$ and $\gamma$ defined as above, $\cat{B}$ is a superbicategory.
+Given a bicategory $\cat{B}$ with the structure of a supercategory on $\cat{B}(a,b)$ for all pairs $a,b$, and natural isomorphisms $\tau$, suppose that \eqref{eq:psiunitor1}-\eqref{eq:psicomp3} commute. Then with $\Psi, \xi$ and $\gamma$ defined as above, $\cat{B}$ is a superbicategory.
 \end{lemma}
 \begin{proof}
 The proof is an easy but somewhat lengthy exercise, which we omit.
@@ -2141,12 +2152,15 @@ A.~Ellis and A.~Lauda, \textsl{An odd categorification of $U_q(\mathfrak{sl}_2)$
 
 \bibitem{friedrich}
 T.~Friedrich, \textsl{{D}irac operations in {R}iemannian geometry}, Graduate studies in mathematics \textbf{25}, AMS (1997).
+
+\bibitem{girard_llogic}
+J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1) (1987), 1--102.
   
 \bibitem{gray}
 J.~W.~Gray, \textsl{Formal category theory: adjointness for 2-categories}, Springer, Berlin, 1974.
 
-\bibitem{girard_llogic}
-J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1) (1987), 1--102.
+\bibitem{greuel}
+G.-M.~Greuel, C.~Lossen and E.~Shustin, \textsl{Introduction to singularities and deformations}, Springer (2007).
 
 \bibitem{kang}
 S.-J.~Kang, M.~Kashiwara and S.-J.~Oh, \textsl{Supercategorification of quantum Kac-Moody algebras}, Adv. Math \textbf{242} (2013) 116--162, \href{http://arxiv.org/abs/1206.5933}{[arXiv:1206.5933]}.
@@ -2180,11 +2194,11 @@ C.~I.~Lazaroiu, \textsl{On the boundary coupling of topological {L}andau-{G}inzb
 D.~McNamee, \textsl{On the mathematical structure of topological defects in
   {L}andau-{G}inzburg models}, MSc Thesis, Trinity College Dublin, 2009.
   
-\bibitem{cutsystems2}
-D.~Murfet, \textsl{Computing with cut systems II}, in progress.
+%\bibitem{cutsystems2}
+%D.~Murfet, \textsl{Computing with cut systems II}, in progress.
 
 \bibitem{murfet_ll}
-\bysame, \textsl{Logic and linear algebra: an introduction}, \href{http://arxiv.org/abs/1407.2650}{[arXiv:1407.2650]}.
+D.~Murfet, \textsl{Logic and linear algebra: an introduction}, \href{http://arxiv.org/abs/1407.2650}{[arXiv:1407.2650]}.
 
 %\bibitem{selinger}
 %P.~Selinger, \textsl{Lecture notes on the {L}ambda calculus}, \href{http://arxiv.org/abs/0804.3434}{[arXiv:0804.3434]}.
