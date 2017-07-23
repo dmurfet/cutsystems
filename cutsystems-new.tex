@@ -182,28 +182,30 @@ In the case $X = X'$ the right hand side is a DG-algebra and the deformation ret
 
 \subsubsection{A geometric enrichment of $\LG_k$}
 
-Our primary motivation for introducing $\cat{C}$ is that it can be enriched over affine schemes; this is not true directly of $\LG_k$, because the composition is infinitary. For context we include a sketch, assuming $k$ is an algebraically closed field of characteristic zero. Given potentials $W(x), V(y)$, a matrix factorisation of $V(y) - W(x)$ is after choosing a homogeneous basis just a matrix
+One of our motivations for introducing $\cat{C}$ is that it has an enrichment over affine schemes. This is not true of $\LG_k$, precisely because the composition is infinitary. We hope to return to this elsewhere, but for context we include a sketch assuming $k$ is an algebraically closed field of characteristic zero. Given potentials $W(x), V(y)$, a matrix factorisation of $V(y) - W(x)$ is after choosing a homogeneous basis just a matrix
 \be\label{eq:intro_capitalD}
 D \in M_{2r}( k[x,y] ) \qquad \text{ satisfying } \qquad D^2 = (V(y) - W(x)) \cdot I_{2r}
 \ee
-where we require that, dividing $D$ into $r \times r$ blocks, the upper left and bottom right blocks are zero matrices. If we fix the size $r$ of the blocks and bound the degrees of the monomials appearing in $D$ by some integer $k$, we can parametrise matrix factorisations by the $k$-points of an affine scheme whose coordinates are the coefficients of the various monomials in each row and column of $D$. 
+where, dividing the matrix $D$ into $r \times r$ blocks, the upper left and bottom right blocks are zero matrices. If we fix the size $r$ of the blocks and bound the degrees of the monomials appearing in $D$ by an integer $s$, then we can easily parametrise matrix factorisations by the $k$-points of an affine scheme.
 
-We may add further coordinates and equations to encode closed odd operators satisfying Clifford relations \eqref{eq:clifford_relations_intro} and, in this way, for a choice of parameters $\lambda = (r, k, \ldots)$ define a scheme $\mathscr{M}_{\lambda}(W,V)$ such that as sets
+We may add further coordinates and equations to encode closed odd operators satisfying Clifford relations \eqref{eq:clifford_relations_intro} and, in this way, for a choice of parameters $\lambda = (r, s, \ldots)$ define a scheme $\mathscr{M}_{\lambda}(W,V)$ such that as sets
 \begin{equation}\label{eq:param_frmf}
-\cat{C}(W,V) = \bigcup_{\lambda} \mathscr{M}_{\lambda}(W,V)_{k}
+\operatorname{ob}(\cat{C}(W,V)) = \bigcup_{\lambda} \mathscr{M}_{\lambda}(W,V)_{k}
 \end{equation}
 where $Z_{k}$ denotes the $k$-points of a scheme $Z$. The cut operation is a polynomial function of its inputs, so there is an indexed family of morphisms of schemes
 \be\label{eq:enrichment_morphisms_intro}
 \mathscr{M}_\mu(V,U) \times \mathscr{M}_\lambda(W,V) \lto \mathscr{M}_{f(\lambda, \mu)}(W, U)
 \ee
-lifting the functor \eqref{eq:cut_functor_intro} on the level of objects for some function $f(\lambda, \mu)$ of indices. Finally, using the approach of Section \ref{example:computing_homs}, we can define for each pair of potentials $W,V$ and tuple of parameters $\lambda$ a bundle of Clifford representations
+lifting the functor \eqref{eq:cut_functor_intro} on the level of objects for some function $f(\lambda, \mu)$ of indices. Finally, using the approach of Section \ref{example:computing_homs}, we can define for each pair of potentials $W,V$ and tuple of parameters $\lambda$ a vector bundle of Clifford representations
 \be\label{eq:enrichment_intro_bundles}
 \xymatrix{
 \mathscr{H}\! om_{W,V,\lambda} \ar[d]\\
-\mathscr{M}_\lambda(W,V) \times \mathscr{M}_\lambda(W,V)\,.
+\mathscr{M}_\lambda(W,V) \times \mathscr{M}_\lambda(W,V)\,,
 }
 \ee
-Given two finite-rank matrix factorisations $X,X'$ of $V - W$ the fiber of this vector bundle over the point $(X',X)$ is the Clifford representation $(X')^{\vee} \l X$ of \eqref{eq:final_finite_model_hom}, which is isomorphic to the Hom-complex $\Hom_{k[x,y]}(X',X)$ tensored with a suitable spinor representation. The enrichment of $\cat{C}$ consists of the family of schemes $\mathscr{M}_\lambda(W,V)$, the composition morphisms \eqref{eq:enrichment_morphisms_intro}, the bundles \eqref{eq:enrichment_intro_bundles}, and various other data satisfying natural constraints which encode the structure of the bicategory.
+such that for matrix factorisations $X,X'$ of $V - W$ the fiber of this bundle over the point $(X',X)$ is the Clifford representation $(X')^{\vee} \l X$ of \eqref{eq:final_finite_model_hom}, which is isomorphic to the Hom-complex $\Hom_{k[x,y]}(X',X)$ tensored with a suitable spinor representation. 
+
+The enrichment of $\cat{C}$ then consists of the family of schemes $\mathscr{M}_\lambda(W,V)$, the composition morphisms \eqref{eq:enrichment_morphisms_intro}, the bundles \eqref{eq:enrichment_intro_bundles}, and various other data satisfying natural constraints which encode the structure of the bicategory.
 
 % The set of finite rank matrix factorisations is denoted $\LG(W,V)_{fin}$. 
 %For technical reasons the category of $1$-morphisms $\LG(W,V)$ contains, in addition to the finite rank matrix factorisations, those infinite rank matrix factorisations which are homotopy equivalent to finite rank ones; this means in particular that the inclusion
@@ -318,7 +320,7 @@ commutes.
 \end{itemize}
 \end{definition}
 
-\begin{example} Supercategories, superfunctors and supernatural transformations form a superbicategory $\Cat^{\operatorname{sup}}_k$.
+\begin{example} Small supercategories, superfunctors and supernatural transformations form a superbicategory $\Cat^{\operatorname{sup}}_k$.
 \end{example}
 
 A superbicategory can be constructed out of a bicategory $\cat{B}$ in which the categories $\cat{B}(a,b)$ are all equipped with the structure of supercategories; see Appendix \ref{section:constructing_superbicategories}.
@@ -646,7 +648,7 @@ X \ar@<1ex>[r]^-{f_0} & V \ar@<1ex>[l]^-{g_0}
 with $f_0 g_0 = 1_V$ and $g_0 f_0 = e_n$ and in $\cat{T}^\bullet$ there are mutually inverse isomorphisms
 \[
 \xymatrix@C+2pc{
-(X, n) \ar@<1ex>[r]^-{f} & (V,0) \ar@<1ex>[l]^-{g}\,.
+(X, n) \ar@<1ex>[r]^-{f} & (V,0) \ar@<1ex>[l]^-{g}
 }
 \]
 induced by $f_0,g_0$. In particular
@@ -659,7 +661,7 @@ The map $f_0$ is a morphism $(X,n) \lto (V,0)$ in $\cat{T}^{\star}$ since
 \[
 f_0 \fermc_i = f_0 e_n \fermc_i = f_0 \ferm_1 \cdots \ferm_n \fermc_n \cdots \fermc_1 \fermc_i = 0\,.
 \]
-Similarly $g_0$ defines a morphism $(V,0) \lto (X,n)$. Let $f,g$ be the morphisms in $\cat{T}^\bullet$ corresponding to $f_0,g_0$ under the equivalence of Lemma \ref{lemma:equivcliffordthick}. To prove that $fg = 1_{(X,n)}$ and $gf = 1_{(V,0)}$ in $\cat{T}^{\bullet}$ it suffices to prove that $f_0 g_0 = 1^*_{(X,n)} = e_n$ and $g_0 f_0 = 1^*_{(V,0)}$ in $\cat{T}^{\star}$. But this is true by definition.
+Similarly $g_0$ is a morphism $(V,0) \lto (X,n)$ in $\cat{T}^{\star}$. Let $f,g$ be the morphisms in $\cat{T}^\bullet$ corresponding to $f_0,g_0$ under the equivalence of Lemma \ref{lemma:equivcliffordthick}. To prove that $fg = 1_{(X,n)}$ and $gf = 1_{(V,0)}$ in $\cat{T}^{\bullet}$ it suffices to prove that $g_0 f_0 = 1^*_{(X,n)} = e_n$ and $f_0 g_0 = 1^*_{(V,0)} = 1_V$ in $\cat{T}$. But this is true by definition.
 \end{proof}
 
 \begin{lemma}\label{lemma:embedcliffordthick} $\cat{T}^\bullet$ is a supercategory and the functor $\iota: \cat{T} \lto \cat{T}^\bullet$ defined by $\iota(X) = (X,0)$ is an equivalence of supercategories.
@@ -741,12 +743,10 @@ with the differential $d_Y \otimes 1 + 1 \otimes d_X$ is a finite rank matrix fa
 \end{lemma}
 \begin{proof}
 Since $V$ is a potential $J_V$ is a finite rank free $k$-module, and it follows that $Y \l X$ is a finite rank free $k[x,z]$-module. 
-
-
 \end{proof}
 %If $\{ e_i \}_{i \in I}$ and $\{ f_j \}_{j \in J}$ are homogeneous bases of $Y, X$ over $k[z,y]$ and $k[y,x]$ respectively, and if $\{ v_k \}_{k \in K}$ is a $k$-basis for $J_V$ (which we give degree zero) then $\{ e_i \otimes v_k \otimes f_j \}_{i,j,k}$ is a $k[x,z]$-basis for $Y \l X$.
 
-\begin{remark}\label{remark:inflation} If we choose a $k$-basis for $J_V$ then multiplication by $y_i$, as a $k$-linear operator $J_V \lto J_V$, gives a matrix $[y_i]$ over $k$. The cut $Y \l X$ has a differential which, as a matrix, can be described by taking the matrix of $d_Y \otimes 1 + 1 \otimes d_X$ over $k[x,y,z]$ and replacing every occurrence of $y_i$ by the scalar matrix $[y_i]$. This ``inflation'' produces a matrix of polynomials over $k[x,z]$. 
+\begin{remark}\label{remark:inflation} If we choose a $k$-basis for $J_V$ then multiplication by $y_i$, as a $k$-linear operator $J_V \lto J_V$, gives a matrix $[y_i]$ over $k$. The cut $Y \l X$ has a differential which, as a matrix, can be described by taking the matrix of $d_Y \otimes 1 + 1 \otimes d_X$ over $k[x,y,z]$ and replacing every occurrence of $y_i$ by the scalar matrix $[y_i]$ and $1 \in k$ by the identity matrix. This ``inflation'' produces a matrix of polynomials over $k[x,z]$. 
 \end{remark}
 
 \begin{definition} Given morphisms of matrix factorisations $\phi: X \lto X'$ and $\psi: Y \lto Y'$ we define the morphism of matrix factorisations
@@ -777,7 +777,7 @@ Y \,\widehat{\otimes}\, X = Y \otimes_{k[y]} \widehat{k[y]} \otimes_{k[y]} X
 \begin{remark}\label{remark:flatness} By hypothesis $k$ is noetherian, hence so is $k[y]$ and therefore the canonical ring morphism $k[y] \lto \widehat{k[y]}$ is flat. 
 \end{remark}
 
-By \cite[Appendix B]{dm1102.2957} there exists a $k$-linear flat connection (which is ``standard'' in the sense of \cite[Definition 8.6]{dm1102.2957})
+With $\Omega^1_{k[t]/k} \cong \bigoplus_{i=1}^m k[t] dt_i$ denoting K\"ahler diferentials, there exists by \cite[Appendix B]{dm1102.2957} a $k$-linear flat connection (which is ``standard'' in the sense of \cite[Definition 8.6]{dm1102.2957})
 \begin{equation}\label{eq:connection_nabla}
 \nabla: \widehat{k[y]} \lto \widehat{k[y]} \otimes_{k[t]} \Omega^1_{k[t]/k}
 \end{equation}
@@ -805,7 +805,7 @@ so $[ \partial_{t_i}, t_j ] = \delta_{ij}$. We calculate
 which shows that $[d_{Y \otimes X}, \partial_{t_i}]$ is $k[t]$-linear.
 \end{proof}
 
-\begin{definition}\label{defn:atiyah} The $i$th Atiyah class is this odd $k[x,z]$-linear operator
+\begin{definition}\label{defn:atiyah} The $i$th Atiyah class is the odd $k[x,z]$-linear operator
 \[
 \At^{Y,X}_i = [d_{Y \otimes X}, \partial_{t_i}]: Y \l X \lto Y \l X \,.
 \]
@@ -814,14 +814,14 @@ Usually we just write $\At_i$ where it will not cause confusion.
 
 This operator is the $i$th Atiyah class of $Y \,\widehat{\otimes}\, X$ relative to the ring morphism $k[x,y] \lto k[x,y,t]$ as defined in \cite[Section 9]{dm1102.2957}. A reference for Atiyah classes is \cite{buchweitz_flenner}, but we will prove the necessary properties here for the reader's convenience.
 
-\begin{lemma}\label{lemma:atiyahclosed} The operator $\At_i$ on $Y \l X$ is closed, and if $\phi: X \lto X'$ and $\psi: Y \lto Y'$ are morphisms of matrix factorisations then there are $k[x,z]$-linear homotopies
+\begin{lemma}\label{lemma:atiyahclosed} $\At_i$ is $d_{Y \otimes X}$-closed, and if $\phi: X \lto X'$ and $\psi: Y \lto Y'$ are morphisms of matrix factorisations then there are $k[x,z]$-linear homotopies
 \be\label{eq:atiyahclosednatural}
 \At^{Y',X'}_i \circ \,( \psi \l \phi ) \simeq ( \psi \l \phi ) \circ \At^{Y,X}_i\,.
 \ee
 That is, the Atiyah classes are \emph{natural}.
 \end{lemma}
 \begin{proof}
-The Atiyah class is closed since
+The Atiyah class is closed since (with $d = d_{Y \otimes X}$)
 \[
 [d, \At_i] = [d, [d, \partial_{t_i}]] = 0\,.
 \]
@@ -852,7 +852,7 @@ up to homotopy.
 \begin{proof}
 This will follow from the considerations of Section \ref{section:theequivalence} but we feel it is worthwhile to give a direct proof, both to demonstrate how straightforward it is and in order to have written down explicit homotopies for the various relations.
 
-By the graded Jacobi identity
+With $d = d_{Y \otimes X}$ the differential on $Y \l X$, we have by the graded Jacobi identity
 \begin{align*}
 [\At_i, \At_j] &= [\At_i, [d, \partial_{t_j}]]\\
 &= - [\partial_{t_j}, [\At_i, d]] - [d, [\partial_{t_j}, \At_i]]\\
@@ -955,7 +955,7 @@ We prove the $C_p$-linearity of $\alpha$, the proof for $C_m$ is similar. The al
 \[
 M = Z \otimes_{k[y]} \widehat{k[y]} \otimes_{k[y]} \big( Y \otimes_{k[z]} J_V \otimes_{k[z]} X \big)
 \]
-relative to the ring morphism $k[q,x] \lto k[q,x] [ \partial_{y_1} U, \ldots, \partial_{y_p} U ]$. Specifically, the generator $\ferm_i$ of $C_p$ is the commutator $[d_{M}, \partial_s]$ where $s = \partial_{y_i} U$. But this operator can be identified with an Atiyah class of the linear factorisation
+relative to the ring morphism $k[q,x] \lto k[q,x] [ \partial_{y_1} U, \ldots, \partial_{y_p} U ]$. Specifically, the generator $\ferm_i$ of $C_p$ is the commutator $[d_{M}, \partial_s]$ where $s = \partial_{y_i} U$. But this operator can be identified with an Atiyah class of
 \begin{equation}\label{eq:assoc_proof_M}
 Z \otimes_{k[y]} \widehat{k[y]} \otimes_{k[y]} \big( Y \otimes_{k[z]} \widehat{k[z]} \otimes_{k[z]} X \big)
 \end{equation}
@@ -972,7 +972,7 @@ By the same argument the action of $C_p$ on $(Z \l Y ) \l X$ is via $(1 \otimes 
 The only thing to check is the coherence of the associator, which is trivial.
 \end{proof}
 
-\begin{remark}\label{remark:relation_to_toby_paper} The cut operation presented here refines earlier work in \cite{dm1102.2957}. To see the connection, recall the idempotent $e_m \in C_m$ of Definition \ref{defn:idempotent_e} which corresponds to projection onto lowest degree in $S_m$. The projector onto top degree $k \cdot \theta_1 \cdots \theta_m \subset S_m$ is 
+\begin{remark}\label{remark:relation_to_toby_paper} The cut operation presented here refines earlier work in \cite{dm1102.2957}. To see the connection, recall the idempotent $e_m \in C_m$ of Definition \ref{defn:idempotent_e} which corresponds to projection onto $k \cdot 1 \subset S_m$. The projector onto top degree $k \cdot \theta_1 \cdots \theta_m \subset S_m$ is 
 \[
 e_m' = \fermc_1 \cdots \fermc_m \ferm_m \cdots \ferm_1\,.
 \]
@@ -1092,14 +1092,14 @@ together with a degree $-1$ operator $\phi: A \lto A$ satisfying
 \item[(iv)] $\phi \sigma = 0$,
 \item[(v)] $\pi \phi = 0$.
 \end{itemize}
-A \emph{morphism} of strong deformation retracts is a commutative diagram
+A \emph{morphism} of strong deformation retracts is a a pair of morphisms of linear factorisations $\alpha: (M,d) \lto (M',d')$ and $\beta: (A,d) \lto (A',d')$ satisfying $\beta \sigma = \sigma' \alpha, \alpha \pi = \pi' \beta$, that is, making the two squares implicit in the diagram
 \[
 \xymatrix@C+2pc{
 (M,d) \ar[d]_{\alpha} \ar@<-1ex>[r]_\sigma & (A,d)\ar[d]^\beta \ar@<-1ex>[l]_\pi\\
 (M',d') \ar@<-1ex>[r]_{\sigma'} & (A',d') \ar@<-1ex>[l]_{\pi'}
 }
 \]
-that is, a pair of morphisms $\alpha, \beta$ such that $\beta \sigma = \sigma' \alpha$, $\alpha \pi = \pi' \beta$ and $\phi' \beta = \beta \phi$.
+commute, and in addition satisfying $\phi' \beta = \beta \phi$.
 \end{definition}
 
 \begin{remark}\label{remark:strongdefosigns} We follow the conventions of \cite{barneslambe} in defining strong deformation retracts; up to a sign this the same as the special deformation retracts of \cite{crainic} and \cite{dm1102.2957}. Namely, a strong deformation retract in the above sense is the same as a special deformation retract in the sense of \emph{ibid.} with $h = - \phi$.
@@ -1158,7 +1158,7 @@ which follows easily from the above.
 \subsection{Clifford actions and Koszul complexes}\label{section:cliffordactkos}
 % spkos series
 
-Let $R$ be a $k$-algebra and $(X,d)$ a complex of $R$-modules on which $t_1,\ldots,t_m \in R$ act null-homotopically. Tensoring $X$ with the Koszul complex $K(t_i)$ yields the same complex as taking the cone of $t_i \cdot 1_X = 0: X \lto X$, and therefore we have a homotopy equivalence
+Let $R$ be a $k$-algebra and $(X,d)$ a complex of $R$-modules on which $t_1,\ldots,t_m \in R$ act null-homotopically. Tensoring $X$ with the Koszul complex $K(t_i)$ yields the same complex as taking the cone of $t_i \cdot 1_X \simeq 0: X \lto X$, and therefore we have a homotopy equivalence
 \be
 K(t_i) \otimes_R X \cong \operatorname{cone}( t_i \cdot 1_X ) \cong X \oplus X[1] \cong ( k \oplus k[1] ) \otimes_k X\,.
 \ee
@@ -1253,7 +1253,7 @@ Of particular interest are the transfers of the generators $\theta_i, \theta_i^*
 \begin{lemma} $\cat{T}(\theta_i^*) = \theta_i^*$.
 \end{lemma}
 \begin{proof}
-Since $\theta_i^*$ commutes with $\delta$.
+Since $\theta_i^*$ anticommutes with $\delta$.
 \end{proof}
 
 However the calculation of $\cat{T}(\theta_i)$ is much more involved. To compute $\cat{T}(\gamma)$ the strategy is to try and commute $\gamma$ past $\exp(-\delta)$ and see what happens. To this end we must first compute $[\gamma, \delta^m]$. We begin the calculations with some general statements about graded commutators. 
@@ -1434,7 +1434,7 @@ Observe that Corollary \ref{corollary_transfergamma} and the preceeding developm
 \]
 And we can adjust the calculations above as follows. Firstly, using Lemma \ref{lemma:woop4} we obtain
 \[
-\delta^p [\delta, \theta_i] = \sum_{i+j=p} \binom{p}{i} [\delta, \theta_i]^{(i+1)} \delta^j = \sum_{i+j=p} \binom{p}{i} [\delta, \lambda_i]^{(i)} \delta^j
+\delta^p [\delta, \theta_i] = \sum_{i+j=p} \binom{p}{i} [\delta, \theta_i]^{(i+1)} \delta^j = \sum_{i+j=p} \binom{p}{i} [\delta, \lambda_i]^{(i)} \delta^j\,.
 \]
 Tracking this through the rest of the calculation, as above, yields \eqref{eq:psik}.
 \end{proof}
@@ -1452,8 +1452,8 @@ It is immediate that
 
 By construction, Proposition \ref{prop:equivalencekoszul} is now promoted to an isomorphism of representations of $C_m$, with $\cat{T}(\theta_i), \cat{T}(\theta_i^*)$ acting on $K \otimes X$ and the $\theta_i, \theta_i^*$ acting on $S_m \otimes_k X$. 
 
-\begin{remark} The construction of the Clifford operators $\psi_i, \psi_i^\dagger$ depends on the choice of homotopies $\lambda_1,\ldots,\lambda_m$, but it is clear from what we have just said that different choices give rise to isomorphic representations of $C_m$. An explicit isomorphism can be written down using the techniques developed in this Section.
-\end{remark}
+%\begin{remark} The construction of the Clifford operators $\psi_i, \psi_i^\dagger$ depends on the choice of homotopies $\lambda_1,\ldots,\lambda_m$, but it is clear from what we have just said that different choices give rise to isomorphic representations of $C_m$. An explicit isomorphism can be written down using the techniques developed in this Section.
+%\end{remark}
 
 \begin{remark}\label{remark:cancellations_transfer} Suppose for each pair $1 \le i,j \le m$ that up to homotopy
 \be
@@ -1521,7 +1521,7 @@ Recall that the tensor product $Y \,\widehat{\otimes}\, X$ of \eqref{eq:complete
 \begin{equation}\label{eq:lambdaiso2}
 \widehat{K} \otimes_{\widehat{k[y]}}( Y \,\widehat{\otimes}\, X ) \cong \widehat{K} \otimes_{\widehat{k[y]}} (R \otimes_k Q) \cong \widehat{K} \otimes_k k[x,z] \otimes_k Q
 \end{equation}
-In this way the $k$-linear splitting homotopy $H$ on $\widehat{K}$ induces an $k[x,z]$-linear operator $H \otimes 1$ on $\widehat{K} \otimes_{\widehat{k[y]}}( Y \,\widehat{\otimes}\, X)$, which we again denote by $H$. It is immediate that
+In this way the $k$-linear splitting homotopy $H$ on $\widehat{K}$ induces a $k[x,z]$-linear operator $H \otimes 1$ on $\widehat{K} \otimes_{\widehat{k[y]}}( Y \,\widehat{\otimes}\, X)$, which we again denote by $H$. It is immediate that
 
 \begin{lemma} $H$ is a $k[x,z]$-linear splitting homotopy on $(\widehat{K} \otimes_{\widehat{k[y]}} ( Y \,\widehat{\otimes}\, X ), d_K)$.
 \end{lemma}
@@ -1536,13 +1536,15 @@ The map $\pi$ is $R$-linear induced by the map $\pi: \widehat{K} \lto J_V$, and 
 
 \vspace{0.3cm}
 
-\textbf{Second step.} We now view $d_{Y \otimes X}$ as a perturbation. The transference problem asks how to define a splitting homotopy $\phi_\infty$ on the matrix factorisation $(\widehat{K} \otimes_{\widehat{k[y]}} Y \,\widehat{\otimes}\, X , d_K + d_{Y \otimes X})$ in such a way that the underlying graded module is $Y \l X$. Since $H d_{Y \otimes X}$ has finite order, it follows from the perturbation lemma (Theorem \ref{theorem:pertlemma}) that
+\textbf{Second step.} We now view $d_{Y \otimes X}$ as a perturbation. The transference problem asks how to define a splitting homotopy $\phi_\infty$ on the matrix factorisation $(\widehat{K} \otimes_{\widehat{k[y]}} Y \,\widehat{\otimes}\, X , d_K + d_{Y \otimes X})$ in such a way that the underlying graded module is $Y \l X$. Since $H d_{Y \otimes X}$ has finite order, it follows from the perturbation lemma (Theorem \ref{theorem:pertlemma}) with $\tau = d_{Y \otimes X}, \phi = H$ that
 \[
 \phi_\infty = \sum_{m \ge 0} (-1)^m (H d_{Y \otimes X})^m H
 \]
-is $k[x,z]$-linear splitting homotopy achieving the desired aim.
-
-Specifically, by \cite[Proposition 7.1]{dm1102.2957} $\phi_\infty$ is an $k[x,z]$-linear splitting homotopy on $\widehat{K} \otimes_{\widehat{k[y]}} Y \,\widehat{\otimes}\, X$ and the associated $k[x,z]$-linear strong deformation retract of linear factorisations of $U - W$ is of the form
+is $k[x,z]$-linear splitting homotopy achieving the desired aim. That is, by \cite[Proposition 7.1]{dm1102.2957} $\phi_\infty$ is a $k[x,z]$-linear splitting homotopy on $\widehat{K} \otimes_{\widehat{k[y]}} Y \,\widehat{\otimes}\, X$ and with
+\[
+\sigma_\infty = \sum_{m \ge 0} (-1)^m (H d_{Y \otimes X})^m \sigma
+\]
+there is a $k[x,z]$-linear strong deformation retract of linear factorisations of $U - W$
 \begin{equation}\label{eq:finite_model_defo}
 \xymatrix@C+4pc{
 \big( Y \l X, d_{Y \otimes X} \big) \ar@<-1ex>[r]_-{\sigma_\infty} & \big( \widehat{K} \otimes_{\widehat{k[y]}} Y \,\widehat{\otimes}\, X, d_K + d_{Y \otimes X} \big)\,, \ar@<-1ex>[l]_-{\pi}
@@ -1720,7 +1722,7 @@ We may arrange these choices so that if $T$ is \emph{already} finite rank then $
 \begin{definition} A \emph{strong superfunctor} $F: \cat{C} \lto \cat{D}$ between superbicategories without units is a strong superfunctor in the sense of Definition \ref{defn:laxsuperfunctor}, but without the data related to units. We say further that $F$ is an \emph{equivalence} if 
 \begin{itemize}
 \item for all $a,b \in \cat{C}$, $F_{a,b}: \cat{C}(a,b) \lto \cat{D}(Fa, Fb)$ is an equivalence of categories, and
-\item for all $d \in \cat{D}$ there exists $a \in \cat{C}$ with $Fa \cong c$ in the sense that there are $1$-morphisms $f: Fa \lto c$ and $g: c \lto Fa$ with $fg \cong 1$ and $gf \cong 1$.
+\item for all $c \in \cat{D}$ there exists $a \in \cat{C}$ with $Fa \cong c$ in the sense that there are $1$-morphisms $f: Fa \lto c$ and $g: c \lto Fa$ with $fg \cong 1$ and $gf \cong 1$.
 \end{itemize}
 \end{definition}
 
@@ -1932,7 +1934,7 @@ Working backwards: $\widetilde{V} \otimes_k \widetilde{X}$ exists and has the ri
 as claimed.
 \end{proof}
 
-From now on $A,B,C$ are Morita trivial $k$-algebras. Recall $\cat{C}_A$ denotes the category of left $A$-modules in $\cat{C}$.
+From now on $A,B,C$ are Morita trivial $k$-algebras. Recall from Definition \ref{defn:algebra_modules} that $\cat{C}_A$ denotes the category of left $A$-modules in $\cat{C}$.
 
 \begin{definition}\label{defn:psimodule} Given a left $A$-module $X$ in $\cat{C}$, the object $\Psi X$ is a left $A$-module, where $a \in A_0$ acts by $\Psi(a)$ and $a \in A_1$ acts by
 \[
@@ -2037,9 +2039,9 @@ as claimed.
 
 This appendix collects the data needed for constructing a superbicategory $\cat{B}$ from a collection of supercategories $\cat{B}(a,b)$. Given a bicategory $\cat{B}$ and for each pair of objects $a,b$ the structure of a supercategory on $\cat{B}(a,b)$, we denote composition by
 \[
-T: \cat{B}(a, b) \otimes_k \cat{B}(b,c) \lto \cat{B}(a,c)\,.
+T: \cat{B}(b, c) \otimes_k \cat{B}(a,b) \lto \cat{B}(a,c)\,.
 \]
-Since our main example is constructing the superbicategory associated to the cut operation, we write $T(X,Y)$ as $Y \l X$. We denote the associator by $\alpha$, the units in $\cat{B}$ by $\Delta_a: a \lto a$, and the unitors for $X: a \lto b$ by $\lambda_X: \Delta_b \l X \lto X$ and $\rho_X: X \l \Delta_a \lto X$.
+Since our main example is constructing the superbicategory associated to the cut operation, we write $T(Y,X)$ as $Y \l X$. We denote the associator by $\alpha$, the units in $\cat{B}$ by $\Delta_a: a \lto a$, and the unitors for $X: a \lto b$ by $\lambda_X: \Delta_b \l X \lto X$ and $\rho_X: X \l \Delta_a \lto X$.
 
 Suppose that for all objects $a,b,c$ we are given natural isomorphisms
 \begin{align*}
@@ -2091,7 +2093,7 @@ T \ar[rr]_-{1_T} & & T
 \end{equation}
 \begin{equation}\label{eq:psicomp2}
 \xymatrix@R+1pc@C+1pc{
-T( \Psi^2 \otimes 1 ) \ar[r]^-{\tau} \ar[d]_-{T (\psi \otimes 1)}  & \Psi T( \Psi \otimes 1 ) \ar[r]^-{\tau} & \Psi^2 T \ar[d]^-{\xi * 1_T}\\
+T( \Psi^2 \otimes 1 ) \ar[r]^-{\tau} \ar[d]_-{T (\xi \otimes 1)}  & \Psi T( \Psi \otimes 1 ) \ar[r]^-{\tau} & \Psi^2 T \ar[d]^-{\xi * 1_T}\\
 T \ar[rr]_-{1_T} & & T
 }
 \end{equation}
@@ -2147,16 +2149,15 @@ N.~Carqueville and D.~Murfet, \textsl{Adjunctions and defects in {L}andau-{G}inz
 N.~Carqueville and D.~Murfet, \textsl{A toolkit for defect computations in Landau-Ginzburg models}, \href{http://arxiv.org/abs/1303.1389}{[arXiv:1303.1389]}, contribution to the String-Math 2012 proceedings.
 
 \bibitem{ade}
-N.~Carqueville, A.~Ros Camacho and I.~Runkel, \textsl{Orbifold equivalent potentials}, \href{http://arxiv.org/abs/1311.3354}{[arXiv:1311.3354]}.
+N.~Carqueville, A.~Ros Camacho and I.~Runkel, \textsl{Orbifold equivalent potentials}, Journal of Pure and Applied Algebra 220.2 (2016), 759--781, \href{http://arxiv.org/abs/1311.3354}{[arXiv:1311.3354]}.
 
 \bibitem{cr0909.4381}
 N.~Carqueville and I.~Runkel, \textsl{On the monoidal structure of matrix bi-factorisations}, J. Phys.
-  A: Math. Theor. \textbf{43} (2010), 275401,
+  A: Math. Theor. \textbf{43} (2010), 
   \href{http://arxiv.org/abs/0909.4381}{[arXiv:0909.4381]}.
   
 \bibitem{genorb}
-\bysame, \textsl{Orbifold completion of defect bicategories}, 
-\href{http://arxiv.org/abs/1210.6363}{[arXiv:1210.6363]}.
+\bysame, \textsl{Orbifold completion of defect bicategories}, Quantum Topology 7 (2016), 203--279, \href{http://arxiv.org/abs/1210.6363}{[arXiv:1210.6363]}.
 
 \bibitem{crainic}
 M.~Crainic, \emph{On the perturbation lemma, and deformations}, \href{http://arxiv.org/abs/math/0403266}{[arXiv:0403266]}
@@ -2178,7 +2179,7 @@ T.~Dyckerhoff and D.~Murfet, \textsl{Pushing forward matrix factorisations}, Duk
 D.~Eisenbud, \textsl{Homological algebra on a complete intersection, with an application to group representations}, Trans. Amer. Math. Soc. \textbf{260} (1980), 35--64.
 
 \bibitem{ellis_lauda}
-A.~Ellis and A.~Lauda, \textsl{An odd categorification of $U_q(\mathfrak{sl}_2)$}, \href{http://arxiv.org/abs/1307.7816}{[arXiv:1307.7816]}.
+A.~Ellis and A.~Lauda, \textsl{An odd categorification of $U_q(\mathfrak{sl}_2)$}, Quantum Topology, Volume 7, Issue 2 (2016), 329--433, \href{http://arxiv.org/abs/1307.7816}{[arXiv:1307.7816]}.
 
 \bibitem{friedrich}
 T.~Friedrich, \textsl{{D}irac operations in {R}iemannian geometry}, Graduate studies in mathematics \textbf{25}, AMS (1997).
@@ -2196,12 +2197,11 @@ G.-M.~Greuel, C.~Lossen and E.~Shustin, \textsl{Introduction to singularities an
 S.-J.~Kang, M.~Kashiwara and S.-J.~Oh, \textsl{Supercategorification of quantum Kac-Moody algebras}, Adv. Math \textbf{242} (2013) 116--162, \href{http://arxiv.org/abs/1206.5933}{[arXiv:1206.5933]}.
 
 \bibitem{kang2}
-\bysame, \textsl{Supercategorification of quantum Kac-Moody algebras II}, \href{http://arxiv.org/abs/1303.1916}{[arXiv:1303.1916]}.
+\bysame, \textsl{Supercategorification of quantum Kac-Moody algebras II},  Adv. Math \textbf{265} (2014) 169--240, \href{http://arxiv.org/abs/1303.1916}{[arXiv:1303.1916]}.
 
 \bibitem{k1004.2307}
 A.~Kapustin, \textsl{Topological {F}ield {T}heory, {H}igher {C}ategories, and
-  {T}heir {A}pplications},
-  \href{http://arxiv.org/abs/1004.2307}{[arXiv:1004.2307]}.
+  {T}heir {A}pplications}, Proceedings of the ICM 2010, \href{http://arxiv.org/abs/1004.2307}{[arXiv:1004.2307]}.
   
 \bibitem{kellystreet}
 G.~M.~Kelly and R.~Street, \textsl{Review of the elements of 2-categories}, In Category Seminar (Proc. Sem., Sydney, 1972/1973), pages 75--103, Lecture Notes in Math., Vol. 420, Springer, Berlin, 1974.
